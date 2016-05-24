@@ -1,9 +1,7 @@
 # PrimusUI
-灵巧简单、可轻松二次开发、专注移动端
+Primus名字取自于《变形金刚》中的元始天尊。
 
-Primus在《变形金刚》中就是元始天尊，名字挺霸气的。
-
-在网上参考了很多个现有的UI库，最终结合自己的理解，整理了这个简单的UI库，每段CSS少则几十行，多则也就几百行。
+在网上参考了很多个现有的UI库，最终结合自己的理解，整理了这个简单的UI库，每段CSS少则几十行，多则也就一百多行。
 
 # 准备知识
 1、CSS开发使用了现在时髦的<a href="http://sass-lang.com/" target="_blank">SASS</a>，CSS预处理器。
@@ -15,7 +13,10 @@ Primus在《变形金刚》中就是元始天尊，名字挺霸气的。
 3、文档是由Jekyll编译而成，
 <a href="http://jekyllrb.com/" target="_blank">Jekyll</a>是一个静态网站生成器。
 如果初次接触，可以参考一下教程
-《<a href="http://www.cnblogs.com/strick/p/5448570.html" target="_blank">用jekyll制作高大上的网站（一）——安装与配置</a>》
+《<a href="http://www.cnblogs.com/strick/p/5448570.html" target="_blank">用jekyll制作网站</a>》
+
+4、借助<a href="https://github.com/amfe/lib-flexible" target="_blank">flexible.js</a>，
+计算html中的font-size（用于计算rem），设置viewport的放大倍数
 
 # 目录结构
 ```html
