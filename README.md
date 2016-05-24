@@ -13,9 +13,10 @@ Primus在《变形金刚》中就是元始天尊，名字挺霸气的。
 《<a href="http://www.cnblogs.com/strick/p/5151714.html" target="_blank">前端自动化构建工具gulp记录</a>》
 
 # 目录结构
+```Ruby
 PrimusUI
   ----assets 
     demo页面中使用到的图片等
   ----css 
     SASS编译出来的CSS代码
-  
+```
