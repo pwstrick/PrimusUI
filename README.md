@@ -11,3 +11,11 @@ Primus在《变形金刚》中就是元始天尊，名字挺霸气的。
 2、代码构建工具使用了<a href="http://gulpjs.com/" target="_blank">Gulp</a>，增强工作流程。
 如果初次接触，可以参考教程
 《<a href="http://www.cnblogs.com/strick/p/5151714.html" target="_blank">前端自动化构建工具gulp记录</a>》
+
+# 目录结构
+PrimusUI
+  ----assets 
+    demo页面中使用到的图片等
+  ----css 
+    SASS编译出来的CSS代码
+  
