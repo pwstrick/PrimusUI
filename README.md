@@ -12,11 +12,23 @@ Primus在《变形金刚》中就是元始天尊，名字挺霸气的。
 如果初次接触，可以参考教程
 《<a href="http://www.cnblogs.com/strick/p/5151714.html" target="_blank">前端自动化构建工具gulp记录</a>》
 
+3、文档是由Jekyll编译而成，
+<a href="http://jekyllrb.com/" target="_blank">Jekyll</a>是一个静态网站生成器。
+如果初次接触，可以参考一下教程
+《<a href="http://www.cnblogs.com/strick/p/5448570.html" target="_blank">用jekyll制作高大上的网站（一）——安装与配置</a>》
+
 # 目录结构
-```Html
+```html
 PrimusUI
-  ----assets 
-    demo页面中使用到的图片等
-  ----css 
-    SASS编译出来的CSS代码
+  ----assets UI库展示页面中使用到的图片等
+  ----css SASS编译出来的CSS代码
+  ----docs  UI库文档说明，由工具Jekyll编译出来
+  ----font  自定义字体
+  ----js  JavaScript文件
+  ----sass  CSS预处理文件
+  ----site  Jekyll源文件
+  --gulpfile.js Gulp配置文件
+  --package.json  Gulp需要的包记录
+  --open.bat  windows批处理，用于在当前目录中打开dos窗口
+  --*.html  UI库各模块展示页面
 ```
