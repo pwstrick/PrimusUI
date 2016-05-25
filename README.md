@@ -9,7 +9,7 @@ Primus名字取自于《变形金刚》中的元始天尊。
 
 <img src="assets/img/demo-qrcode.png" width="150" height="150"/>
 
-在线文档：<a href="https://pwstrick.github.com/docs/ui/typeface.html">点击查看</a>
+在线文档：<a href="http://pwstrick.github.io/PrimusUI/docs/ui/typeface.html">点击查看</a>
 
 ## 准备知识
 1、CSS开发使用了现在时髦的<a href="http://sass-lang.com/" target="_blank">SASS</a>，CSS预处理器。
