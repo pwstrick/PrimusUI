@@ -1,4 +1,4 @@
-# PrimusUI
+## PrimusUI
 小身材大用途，响应式页面，专注于移动端，可轻松定做二次开发。
 
 Primus名字取自于《变形金刚》中的元始天尊。
@@ -11,7 +11,7 @@ Primus名字取自于《变形金刚》中的元始天尊。
 
 在线文档：<a href="https://pwstrick.github.com/docs/ui/typeface.html">点击查看</a>
 
-# 准备知识
+## 准备知识
 1、CSS开发使用了现在时髦的<a href="http://sass-lang.com/" target="_blank">SASS</a>，CSS预处理器。
 
 2、代码构建工具使用了<a href="http://gulpjs.com/" target="_blank">Gulp</a>，增强工作流程。
@@ -36,7 +36,7 @@ Primus名字取自于《变形金刚》中的元始天尊。
 “<a href="https://www.npmjs.com/package/autoprefixer" target="_blank">autoprefixer</a>”，可自动匹配前缀。
 第4和第5条的配置写在gulpfile.js中。
 
-# 目录结构
+## 目录结构
 ```html
 PrimusUI
 └─ ─ ─ ─ assets UI库展示页面中使用到的图片等
@@ -52,7 +52,7 @@ PrimusUI
 └─ ─ *.html  UI库各模块展示页面
 ```
 
-# CSS特点
+## CSS特点
 1、响应式布局，大量使用rem、弹性属性、百分比属性，可适应移动端多种屏幕。
 
 <img src="assets/img/default.jpg"/>
@@ -105,10 +105,17 @@ PrimusUI
 
 12、在mixin.scss中设置了全局在mixin，在variable.scss配置了全局变量，高可用性。
 
-# 浏览器兼容
-
+## 浏览器兼容
 Android 2.3+
 
 IOS 4.0+
 
 
+## 联系我
+对zDialog的使用有任何问题,或者发现bug,欢迎给我反馈：
+[提交反馈](https://github.com/pwstrick/PrimusUI/issues/new)
+
+## License (MIT)
+Copyright (c) 2016 pwstrick
+
+[MIT](https://github.com/pwstrick/PrimusUI/blob/master/LICENSE)
