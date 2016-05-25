@@ -9,6 +9,8 @@ Primus名字取自于《变形金刚》中的元始天尊。
 
 <img src="assets/img/demo-qrcode.png" width="150" height="150"/>
 
+项目主页：<a href="http://pwstrick.github.io/PrimusUI">点击查看</a>
+
 在线文档：<a href="http://pwstrick.github.io/PrimusUI/docs/ui/typeface.html">点击查看</a>
 
 ## 准备知识
