@@ -99,7 +99,8 @@ PrimusUI
 
 12、在mixin.scss中设置了全局在mixin，在variable.scss配置了全局变量，高可用性。
 
+# 浏览器兼容
 
-
+Android 2.3+   IOS 4.0+
 
 
