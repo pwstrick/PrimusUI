@@ -7,7 +7,7 @@ Primus名字取自于《变形金刚》中的元始天尊。
 
 在线demo：
 
-<img src="assets/img/demo-qrcode.jpg"/>
+<img src="assets/img/demo-qrcode.png"/>
 
 在线文档：<a href="https://pwstrick.github.com/docs/ui/typeface.html">点击查看</a>
 
@@ -107,6 +107,8 @@ PrimusUI
 
 # 浏览器兼容
 
-Android 2.3+   IOS 4.0+
+Android 2.3+
+
+IOS 4.0+
 
 
