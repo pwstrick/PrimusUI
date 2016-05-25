@@ -5,6 +5,12 @@ Primus名字取自于《变形金刚》中的元始天尊。
 
 在网上参考了很多个现有的UI库，最终结合自己的理解，整理了这个简单的UI库，每段CSS少则几十行，多则也就一百多行。
 
+在线demo：
+
+<img src="assets/img/demo-qrcode.jpg"/>
+
+在线文档：<a href="https://pwstrick.github.com/docs/ui/typeface.html">点击查看</a>
+
 # 准备知识
 1、CSS开发使用了现在时髦的<a href="http://sass-lang.com/" target="_blank">SASS</a>，CSS预处理器。
 
