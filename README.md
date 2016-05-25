@@ -48,6 +48,7 @@ PrimusUI
 
 # CSS特点
 1、响应式布局，大量使用rem、弹性属性、百分比属性，可适应移动端多种屏幕。
+
 <img src="assets/img/default.jpg"/>
 
 2、normalize.scss：在流行的重置样式“<a href="https://necolas.github.io/normalize.css/" target="_blank">normalize.css</a>”
@@ -55,26 +56,46 @@ PrimusUI
 
 3、typeface.scss：列举了多种场景的字体颜色与大小，字截断，移动端常用的箭头标记。
 
+<img src="assets/img/typeface.jpg"/>
+
 4、icon.scss：可在第三方<a href="http://www.iconfont.cn/" target="_blank">iconfont</a>
 库，按需下载现成的图标，也可在此网站中上传svg文件，自动制成特定图标。
+
+<img src="assets/img/icon.jpg"/>
 
 5、grid.scss：多样化的网格实现，
 网格中包括先进的弹性设置(预设了12种宽度)、百分比设置(预设了24种宽度)，左偏移，左移动，右移动(也是24种)。
 与PC端的固定宽度不同，移动端屏幕各异，所以不能将每个元素的宽度定死。而弹性宽度或百分比在设置后可自动计算数值。
 相比较于传统的float布局，弹性布局更容易控制，尤其是在对齐方式中设置中。
 
+<img src="assets/img/grid.jpg"/>
+
 6、border.scss：有效解决1px边框，在移动端各种屏幕的显示问题。
+
+<img src="assets/img/border.jpg"/>
 
 7、layout.scss：布局样式中预设了6种留白尺寸，轻松实现一行、多行、弹性布局中的两边对齐。
 
+<img src="assets/img/layout.jpg"/>
+
 8、list.scss：结合网格、布局样式，可实现多种不同场景的列表展示，可自定义的Loading（）效果。
+
+<img src="assets/img/list.jpg"/>
 
 9、table.scss：将表格抽象化，将边框、列表颜色等独立一个样式，可与基类样式结合使用。
 
+<img src="assets/img/table.jpg"/>
+
 10、标签（label.scss）、微标（badge.scss）、按钮（button.scss）各自的预编译文件都提供了私有方法，可以根据实际场景扩展。
+
+<img src="assets/img/label.jpg"/>
+<img src="assets/img/badge.jpg"/>
+<img src="assets/img/button.jpg"/>
 
 11、form.scss：通过CSS3伪元素重新美化了单选框（radio.scss）、多选框（checkbox.scss）、开关项（switch.scss）。
 并结合网格、按钮等样式，可布置出多种表单项。
+
+<img src="assets/img/form.jpg"/>
 
 12、在mixin.scss中设置了全局在mixin，在variable.scss配置了全局变量，高可用性。
 
