@@ -1,0 +1,32 @@
+- id: "basic"
+  name: "基础属性"
+  children:
+   - id: "ui-flex"
+     name: ".ui-flex"
+   - id: "ui-flex-rowui-flex-column"
+     name: ".ui-flex-row与.ui-flex-column"
+
+- id: "align"
+  name: "对齐方式"
+  children:
+   - id: "ui-flex-columns-center"
+     name: ".ui-flex-columns-center"
+   - id: "ui-flex-column-center"
+     name: ".ui-flex-column-center"
+   - id: "ui-flex-column-baseline"
+     name: ".ui-flex-column-baseline"
+   - id: "ui-flex-column-end"
+     name: ".ui-flex-column-end"
+   - id: "ui-flex-row-center"
+     name: ".ui-flex-row-center"
+   - id: "ui-flex-row-between"
+     name: ".ui-flex-row-between"
+
+- id: "col"
+  name: "空间设置"
+
+- id: "width"
+  name: "百分比宽度分配"
+
+- id: "float"
+  name: "流布局"

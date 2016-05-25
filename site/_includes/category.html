@@ -1,0 +1,12 @@
+{% for category in site.categories %}
+    {% if category.first == page.category %}
+        {% for post in category.last %}
+<div class="article">
+    <div class="well">
+        <h1 class="none"><a href="{{ site.baseurl}}{{ post.url }}">{{ post.title }} {{ post.date | date: "（%Y年%m月%d日）" }}</a></h1>
+        <div class="content">{{ post.excerpt | strip_html }}</div>
+    </div>
+</div>
+        {% endfor %}
+    {% endif %}
+{% endfor %}

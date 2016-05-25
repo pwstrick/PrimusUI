@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PrimusUI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/docs/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/docs/css/docs.css" rel="stylesheet" type="text/css">
+    <link href="/docs/css/syntax.css" rel="stylesheet" type="text/css">
+    <link href="http://h5dev.chelun.com/libs/ui/css/all-normal.css" rel="stylesheet" type="text/css">
+    <link href="/docs/css/theme.css" rel="stylesheet" type="text/css">
+    <script src="/docs/js/jquery.min.js"></script>
+    <script src="/docs/js/bootstrap.min.js"></script>
+    <script src="/docs/js/docs.min.js"></script>
+</head>
+
+<body>
+<header id="top">
+    <div class="row-fluid">
+        <div class="navbar navbar-inverse" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/docs/">PrimusUI</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/docs/ui/typeface.html">UI库</a></li>
+                    <li class="active"><a href="/docs/gulp/install.html">Gulp</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2 hidden-xs">
+            <div class="sidebar well">
+    
+        <h1>基础样式</h1>
+<ul>
+    <li><a href="/docs/ui/typeface.html">文本（typeface）</a></li>
+    <li><a href="/docs/ui/icon.html">图标（icon）</a></li>
+    <li><a href="/docs/ui/grid.html">网格（grid）</a></li>
+    <li><a href="/docs/ui/border.html">边框（border）</a></li>
+    <li><a href="/docs/ui/layout.html">布局（layout）</a></li>
+</ul>
+<h1>UI组件</h1>
+<ul class="mb20">
+    <li><a href="/docs/ui/label.html">标签（label）</a></li>
+    <li><a href="/docs/ui/badge.html">微标（badge）</a></li>
+    <li><a href="/docs/ui/button.html">按钮（button）</a></li>
+    <li><a href="/docs/ui/list.html">列表（list）</a></li>
+    <li><a href="/docs/ui/table.html">表格（table）</a></li>
+    <li><a href="/docs/ui/form.html">表单（form）</a></li>
+</ul>
+<div class="text-danger">
+    <p>UI库中的CSS是通过SASS编译生成。</p>
+    <p>UI库与flexible.js配合使用。</p>
+    <p>UI库除了字体、边框宽度等，大部分是使用rem作为单位，可以在gulp中引入插件，自动计算。</p>
+</div>
+<p>扫描下面的二维码，查看在线demo</p>
+<img src="/docs/assets/images/ui.png" width="100%"/>
+    
+</div>
+        </div>
+        <div class="col-md-8">
+            <div class="well">
+                <h1 class="none"><a href="button.html">按钮（component/button.scss）</a></h1>
+                <p>按钮分为三种状态，普通、按下、无效。其中无效可以用样式“.disabled”或设置按钮属性“disabled”。</p>
+
+<p>有个私有的@mixin<strong>“_btn-active”</strong>可以自定义按下样式，按钮通用的样式写在占位选择器<strong>“%btn”</strong>中。</p>
+
+<p>这些都可以继承后自定义。</p>
+
+<h1 id="size">一、尺寸（size）</h1>
+
+<p>在“button.scss”中，有个私有@mixin<strong>“_btnSize”</strong>，控制着尺寸，字体，display属性。</p>
+
+<h5 id="small"><strong>1）普通小按钮（small）</strong></h5>
+
+<p>默认小按钮宽高是110*50，字体是26px，圆角是6px。</p>
+
+<div class="demo-border">
+  <button class="ui-btn-sm">确定</button>
+  <button class="ui-btn-sm active">确定</button>
+  <button class="ui-btn-sm disabled">取消</button>
+  <button class="ui-btn-sm" disabled="">取消</button>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"ui-btn-sm"</span><span class="nt">&gt;</span>确定<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"ui-btn-sm active"</span><span class="nt">&gt;</span>确定<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"ui-btn-sm disabled"</span><span class="nt">&gt;</span>取消<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"ui-btn-sm"</span> <span class="na">disabled</span><span class="nt">&gt;</span>取消<span class="nt">&lt;/button&gt;</span>
+</code></pre>
+</div>
+
+<h5 id="normal"><strong>2）普通按钮（normal）</strong></h5>
+
+<p>普通按钮是110*60，其中宽度设置的是“min-width”，字体30px，圆角是6px。</p>
+
+<p>CSS类与上面的类似，只是<strong>“ui-btn-sm”</strong>换成<strong>“ui-btn”</strong>。</p>
+
+<div class="demo-border">
+  <button class="ui-btn">确定</button>
+  <button class="ui-btn active">确定</button>
+  <button class="ui-btn disabled">取消</button>
+  <button class="ui-btn" disabled="">取消</button>
+</div>
+
+<h5 id="large"><strong>3）大按钮（large）</strong></h5>
+
+<p>大按钮宽度是100%，高度是88px，字体36px，圆角是10px。</p>
+
+<p>CSS类与上面的类似，只是<strong>“ui-btn-sm”</strong>换成<strong>“ui-btn-lg”</strong>。</p>
+
+<div class="demo-border">
+  <button class="ui-btn-lg">确定</button>
+  <button class="ui-btn-lg active">确定</button>
+  <button class="ui-btn-lg disabled">取消</button>
+  <button class="ui-btn-lg" disabled="">取消</button>
+</div>
+
+<h1 id="color">二、颜色（color）</h1>
+
+<p>默认有两种颜色，蓝色和红色，CSS类分别是<strong>“ui-btn-primary”</strong>和<strong>“ui-btn-danger”</strong>，带颜色后边框就会去除。</p>
+
+<h5 id="primary"><strong>1）蓝色（primary）</strong></h5>
+
+<div class="demo-border">
+  <button class="ui-btn ui-btn-primary">确定</button>
+  <button class="ui-btn ui-btn-primary active">确定</button>
+  <button class="ui-btn ui-btn-primary disabled">取消</button>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"ui-btn ui-btn-primary"</span><span class="nt">&gt;</span>确定<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"ui-btn ui-btn-primary active"</span><span class="nt">&gt;</span>确定<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"ui-btn ui-btn-primary disabled"</span><span class="nt">&gt;</span>取消<span class="nt">&lt;/button&gt;</span>
+</code></pre>
+</div>
+
+<h5 id="danger"><strong>2）红色（danger）</strong></h5>
+
+<div class="demo-border">
+  <button class="ui-btn ui-btn-danger">确定</button>
+  <button class="ui-btn ui-btn-danger active">确定</button>
+  <button class="ui-btn ui-btn-danger disabled">取消</button>
+</div>
+
+<h1 id="progress">三、进度条按钮（progress）</h1>
+
+<p>这个按钮比较特殊，在按钮内多加了几个<strong>“span”</strong>，实现进度条效果。</p>
+
+<div class="demo-border">
+  <button class="ui-btn-sm ui-btn-progress disabled"><span>50%</span><span class="ui-btn-inner" style="width:50%"><span>50%</span></span></button>
+  <button class="ui-btn ui-btn-progress disabled"><span>50%</span><span class="ui-btn-inner" style="width:50%"><span>50%</span></span></button>
+</div>
+
+            </div>
+        </div>
+        <div class="col-md-2">
+            <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top">
+    <ul class="nav bs-docs-sidenav">
+        
+        
+        <li class="active">
+            
+            <a href="#size">尺寸</a>
+            
+            <ul class="nav">
+                
+                <li><a href="#small">普通小按钮</a></li>
+                
+                <li><a href="#normal">普通按钮</a></li>
+                
+                <li><a href="#large">大按钮</a></li>
+                
+            </ul>
+            
+        </li>
+        
+        
+        <li>
+            
+            <a href="#color">颜色</a>
+            
+            <ul class="nav">
+                
+                <li><a href="#primary">蓝色</a></li>
+                
+                <li><a href="#danger">红色</a></li>
+                
+            </ul>
+            
+        </li>
+        
+        
+        <li>
+            
+            <a href="#progress">进度条按钮</a>
+            
+        </li>
+        
+    </ul>
+    <a href="#top" class="back-to-top">返回顶部</a>
+</nav>
+        </div>
+    </div>
+</div>
+
+<footer class="footer navbar-inverse navbar-fixed-bottom">
+    <p class="copyright">&copy;2016 上海易点时空网络有限公司 沪ICP备12046769号-2</p>
+</footer>
+
+</body>
+</html>
+

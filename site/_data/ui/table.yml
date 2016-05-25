@@ -1,0 +1,8 @@
+- id: "default"
+  name: "默认无边框"
+
+- id: "border"
+  name: "有边框"
+
+- id: "color"
+  name: "行的颜色"

@@ -1,0 +1,14 @@
+<div class="sidebar well">
+    {% case page.sidebar %}
+    {% when 'common' %}
+        {% include sidebar/sidebar-common.html%}
+    {% when 'ui' %}
+        {% include sidebar/sidebar-ui.html%}
+    {% when 'gulp' %}
+        {% include sidebar/sidebar-gulp.html%}
+    {% when 'works' %}
+        {% include sidebar/sidebar-works.html%}
+    {% when 'article' %}
+        {% include sidebar/sidebar-article.html%}
+    {% endcase %}
+</div>

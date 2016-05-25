@@ -1,0 +1,29 @@
+{% include header.html %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2 hidden-xs">
+            {% include sidebar.html %}
+        </div>
+        <div class="col-md-8">
+            <div class="well">
+                <h1 class="none"><a href="{{page.sidenav}}.html">{{ page.title }}</a></h1>
+                <div class="row works">
+                    {% for work in site.data[page.sidebar][page.sidenav] %}
+                    <div class="col-md-4">
+                        <a href="{{work.url}}" class="text-center" target="_blank">
+                            <div class="img" style="background-image:url({{site.baseurl}}{{work.img}})"></div>
+
+                            <h4>车轮招聘节</h4>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% include footer.html %}

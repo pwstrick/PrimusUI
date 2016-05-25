@@ -1,0 +1,16 @@
+- id: "placeholder"
+  name: "占位"
+
+- id: "whitespace"
+  name: "留白"
+
+- id: "justify"
+  name: "对齐"
+  children:
+   - id: "one"
+     name: "一行对齐"
+   - id: "multi"
+     name: "多行对齐"
+   - id: "flex"
+     name: "弹性布局对齐"
+

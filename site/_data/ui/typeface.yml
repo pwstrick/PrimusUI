@@ -1,0 +1,12 @@
+- id: "h1--h6"
+  name: "h1--h6"
+
+- id: "color"
+  name: "字体颜色"
+
+- id: "wrap"
+  name: "文字截断"
+
+- id: "arrow"
+  name: "箭头链接"
+

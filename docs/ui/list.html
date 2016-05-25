@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PrimusUI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/docs/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/docs/css/docs.css" rel="stylesheet" type="text/css">
+    <link href="/docs/css/syntax.css" rel="stylesheet" type="text/css">
+    <link href="http://h5dev.chelun.com/libs/ui/css/all-normal.css" rel="stylesheet" type="text/css">
+    <link href="/docs/css/theme.css" rel="stylesheet" type="text/css">
+    <script src="/docs/js/jquery.min.js"></script>
+    <script src="/docs/js/bootstrap.min.js"></script>
+    <script src="/docs/js/docs.min.js"></script>
+</head>
+
+<body>
+<header id="top">
+    <div class="row-fluid">
+        <div class="navbar navbar-inverse" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/docs/">PrimusUI</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/docs/ui/typeface.html">UI库</a></li>
+                    <li class="active"><a href="/docs/gulp/install.html">Gulp</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2 hidden-xs">
+            <div class="sidebar well">
+    
+        <h1>基础样式</h1>
+<ul>
+    <li><a href="/docs/ui/typeface.html">文本（typeface）</a></li>
+    <li><a href="/docs/ui/icon.html">图标（icon）</a></li>
+    <li><a href="/docs/ui/grid.html">网格（grid）</a></li>
+    <li><a href="/docs/ui/border.html">边框（border）</a></li>
+    <li><a href="/docs/ui/layout.html">布局（layout）</a></li>
+</ul>
+<h1>UI组件</h1>
+<ul class="mb20">
+    <li><a href="/docs/ui/label.html">标签（label）</a></li>
+    <li><a href="/docs/ui/badge.html">微标（badge）</a></li>
+    <li><a href="/docs/ui/button.html">按钮（button）</a></li>
+    <li><a href="/docs/ui/list.html">列表（list）</a></li>
+    <li><a href="/docs/ui/table.html">表格（table）</a></li>
+    <li><a href="/docs/ui/form.html">表单（form）</a></li>
+</ul>
+<div class="text-danger">
+    <p>UI库中的CSS是通过SASS编译生成。</p>
+    <p>UI库与flexible.js配合使用。</p>
+    <p>UI库除了字体、边框宽度等，大部分是使用rem作为单位，可以在gulp中引入插件，自动计算。</p>
+</div>
+<p>扫描下面的二维码，查看在线demo</p>
+<img src="/docs/assets/images/ui.png" width="100%"/>
+    
+</div>
+        </div>
+        <div class="col-md-8">
+            <div class="well">
+                <h1 class="none"><a href="list.html">列表（component/list.scss）</a></h1>
+                <p>列表中有使用<strong>“flex”</strong>弹性布局，也会用到<strong>“block”</strong>传统布局，结合<a href="grid.html">网格</a>、<a href="border.html">边框</a>、<a href="layout.html">布局</a>等样式，就能实现各种列表效果。</p>
+
+<p>列表效果的标签是用<strong>“ul”</strong>和<strong>“li”</strong>。先给<strong>“ul”</strong>赋<strong>“ui-list”</strong>，默认<strong>“li”</strong>内是<strong>“flex”</strong>布局。</p>
+
+<h1 id="block">一、传统布局（block）</h1>
+
+<p>给<strong>“ul”</strong>赋<strong>“ui-list-block”</strong>，<strong>“li”</strong>内就是<strong>“block”</strong>，传统的布局。</p>
+
+<p>给<strong>“li”</strong>赋<strong>“active”</strong>样式，就是按下的效果。</p>
+
+<div class="demo-border">
+  <ul class="ui-list ui-list-block">
+    <li>
+      <h3>1.h3标题标题标题</h3>
+      <h6>h6内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</h6>
+    </li>
+    <li class="active">
+      <h3>1.按下的效果</h3>
+      <h6>h6内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</h6>
+    </li>
+  </ul>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"ui-list ui-list-block"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;li&gt;</span>
+    <span class="nt">&lt;h3&gt;</span>1.h3标题标题标题<span class="nt">&lt;/h3&gt;</span>
+    <span class="nt">&lt;h6&gt;</span>h6内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容<span class="nt">&lt;/h6&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"active"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h3&gt;</span>1.按下的效果<span class="nt">&lt;/h3&gt;</span>
+    <span class="nt">&lt;h6&gt;</span>h6内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容<span class="nt">&lt;/h6&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</code></pre>
+</div>
+
+<h1 id="multi">二、多列布局（multi）</h1>
+
+<p>在<strong>“li”</strong>内可以有两列，三列甚至更多，下面演示的是弹性布局的情况。</p>
+
+<p>如果是传统布局，就需要<strong>“float”</strong>浮动实现。</p>
+
+<div class="demo-border">
+  <ul class="ui-list">
+    <li class="ui-flex-column-center">
+      <div class="ui-col-1">
+        <h4>设置了上下居中的效果</h4>
+        <p>设置了上下居中的效果</p>
+      </div>
+      <div>使用中</div>
+    </li>
+  </ul>
+</div>
+
+<p>上面实现的两列垂直居中，使用到了网格中的“<a href="grid.html#ui-flex-column-center">ui-flex-column-center</a>”样式。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"ui-list"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"ui-flex-column-center"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ui-col-1"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;h4&gt;</span>设置了上下居中的效果<span class="nt">&lt;/h4&gt;</span>
+      <span class="nt">&lt;p&gt;</span>设置了上下居中的效果<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span>使用中<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</code></pre>
+</div>
+
+<h1 id="arrow">三、箭头列表（arrow）</h1>
+
+<p>给<strong>“ul”</strong>赋<strong>“ui-list-link”</strong>样式，下面的<strong>“li”</strong>都会显示一个箭头。</p>
+
+<div class="demo-border">
+  <ul class="ui-list ui-list-link">
+    <li class="ui-flex-column-center">
+      <div class="ui-col-1">
+        <h4 class="ui-nowrap">生日</h4>
+        <p>设置了上下居中的效果</p>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"ui-list ui-list-link"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"ui-flex-column-center"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ui-col-1"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">"ui-nowrap"</span><span class="nt">&gt;</span>生日<span class="nt">&lt;/h4&gt;</span>
+      <span class="nt">&lt;p&gt;</span>设置了上下居中的效果<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</code></pre>
+</div>
+
+<h1 id="img">四、图文混排（img）</h1>
+
+<p>给包裹图片的容器加个<strong>“ui-list-img”</strong>样式。</p>
+
+<p>这个样式默认会将图片变为块级元素，并且设置为100%宽度，并配置了外边距。</p>
+
+<div class="demo-border">
+  <ul class="ui-list ui-list-link">
+    <li>
+      <div class="ui-width-10 ui-list-img">
+        <img src="/docs/assets/images/ui-demo1.jpg" />
+      </div>
+      <h4 class="ui-nowrap ui-col-1">性别</h4>
+    </li>
+  </ul>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"ui-list ui-list-link"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;li&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ui-width-10 ui-list-img"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"assets/images/ui-demo1.jpg"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">"ui-nowrap ui-col-1"</span><span class="nt">&gt;</span>性别<span class="nt">&lt;/h4&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</code></pre>
+</div>
+
+<h1 id="loading">五、加载效果（loading）</h1>
+
+<p>加载样式其实是在<strong>“component/loading.scss”</strong>中，一个独立的CSS。</p>
+
+<p>用最朴素的实现方式，设置border为3px，将border-top设置为透明，圆角设置为100%，变成一个圆。</p>
+
+<p>最后用CSS3动画旋转360°。</p>
+
+<div class="demo-border">
+  <div class="ui-loading-wrap">
+    <p>加载中</p>
+    <i class="ui-loading"></i>
+  </div>
+</div>
+
+            </div>
+        </div>
+        <div class="col-md-2">
+            <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top">
+    <ul class="nav bs-docs-sidenav">
+        
+        
+        <li class="active">
+            
+            <a href="#block">传统布局</a>
+            
+        </li>
+        
+        
+        <li>
+            
+            <a href="#multi">多列布局</a>
+            
+        </li>
+        
+        
+        <li>
+            
+            <a href="#arrow">箭头列表</a>
+            
+        </li>
+        
+        
+        <li>
+            
+            <a href="#img">图文混排</a>
+            
+        </li>
+        
+        
+        <li>
+            
+            <a href="#loading">加载效果</a>
+            
+        </li>
+        
+    </ul>
+    <a href="#top" class="back-to-top">返回顶部</a>
+</nav>
+        </div>
+    </div>
+</div>
+
+<footer class="footer navbar-inverse navbar-fixed-bottom">
+    <p class="copyright">&copy;2016 上海易点时空网络有限公司 沪ICP备12046769号-2</p>
+</footer>
+
+</body>
+</html>
+

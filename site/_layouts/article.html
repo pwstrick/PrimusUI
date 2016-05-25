@@ -1,0 +1,20 @@
+{% include header.html %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2 hidden-xs">
+            {% include sidebar.html %}
+        </div>
+        <div class="col-md-8">
+            {% if page.showCategory %}
+                {% include category.html %}
+            {% endif %}
+            {{ content }}
+            {% if page.pagination != false %}
+                {% include pagination.html %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% include footer.html %}

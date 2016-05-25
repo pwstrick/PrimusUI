@@ -1,0 +1,21 @@
+<nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top">
+    <ul class="nav bs-docs-sidenav">
+        {% for data in site.data[page.sidebar][page.sidenav] %}
+        {% if forloop.first %}
+        <li class="active">
+            {% else %}
+        <li>
+            {% endif %}
+            <a href="#{{ data.id }}">{{ data.name }}</a>
+            {% if data.children %}
+            <ul class="nav">
+                {% for sub in data.children %}
+                <li><a href="#{{ sub.id }}">{{ sub.name }}</a></li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="#top" class="back-to-top">返回顶部</a>
+</nav>

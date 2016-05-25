@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PrimusUI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/docs/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/docs/css/docs.css" rel="stylesheet" type="text/css">
+    <link href="/docs/css/syntax.css" rel="stylesheet" type="text/css">
+    <link href="http://h5dev.chelun.com/libs/ui/css/all-normal.css" rel="stylesheet" type="text/css">
+    <link href="/docs/css/theme.css" rel="stylesheet" type="text/css">
+    <script src="/docs/js/jquery.min.js"></script>
+    <script src="/docs/js/bootstrap.min.js"></script>
+    <script src="/docs/js/docs.min.js"></script>
+</head>
+
+<body>
+<header id="top">
+    <div class="row-fluid">
+        <div class="navbar navbar-inverse" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/docs/">PrimusUI</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/docs/ui/typeface.html">UI库</a></li>
+                    <li class="active"><a href="/docs/gulp/install.html">Gulp</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2 hidden-xs">
+            <div class="sidebar well">
+    
+        <h1>Gulp</h1>
+<ul>
+    <li><a href="/docs/gulp/install.html">安装</a></li>
+    <li><a href="/docs/gulp/widget.html">插件</a></li>
+</ul>
+    
+</div>
+        </div>
+        <div class="col-md-8">
+            <div class="well">
+                <h1 class="none"><a href="install.html">安装</a></h1>
+                <h1 id="nodejs">一、安装node.js</h1>
+
+<p>通过<a href="http://nodejs.cn/" target="_blank">nodejs</a>的npm安装gulp，插件也可以通过npm安装。windows系统是个.msi工具。</p>
+
+<p>只要一直下一步即可，软件会自动在写入环境变量中，这样就能在cmd命令窗口中直接使用node或npm指令。</p>
+
+<p><img src="../assets/images/gulp/nodejs.png" /></p>
+
+<p>上面的cmd，已经被<a href="https://www.git-scm.com/" target="_blank">git</a>封装过了，字体都变成彩色的了。</p>
+
+<p>安装了这个工具后，还可以通过Git Bash打Linux的命令。</p>
+
+<p><img src="../assets/images/gulp/git.png" /></p>
+
+<h1 id="npm">二、npm</h1>
+
+<p><a href="https://www.npmjs.com/" target="_blank">npm</a>（node package manager）nodejs的包管理器，用于node插件管理（包括安装、卸载、管理依赖等）。</p>
+
+<p>命令提示符执行：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">npm</span> <span class="n">install</span> <span class="o">&lt;</span><span class="nb">name</span><span class="o">&gt;</span> <span class="p">[</span><span class="o">-</span><span class="n">g</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">save</span><span class="o">-</span><span class="n">dev</span><span class="p">]</span>
+</code></pre>
+</div>
+
+<blockquote>
+  <ol>
+    <li>
+      <name>：node插件名称。例：npm install gulp-less --save-dev
+</name>
+    </li>
+    <li>-g：全局安装。将会安装在C:\Users\Administrator\AppData\Roaming\npm，并且写入系统环境变量；
+非全局安装：将会安装在当前定位目录；
+全局安装可以通过命令行在任何地方调用它，本地安装将安装在定位目录的node_modules文件夹下，通过require()调用；</li>
+    <li>–save：将保存配置信息至package.json（package.json是nodejs项目配置文件）；</li>
+    <li>-dev：保存至package.json的devDependencies节点，不指定-dev将保存至dependencies节点</li>
+  </ol>
+</blockquote>
+
+<p>配置文件package.json是为了方便下载相关的包。</p>
+
+<p>只需要在有这个文件的文件夹下面执行“npm install”（如果安装了cnpm就用“cnpm install”），则会根据package.json下载所有需要的包。</p>
+
+<p>由于下载下来的“node_modules”文件会很多，不需要每个工程下面都下载一次，所以可以放到一个<strong>公共的目录下面</strong>。</p>
+
+<p>例如下面的目录，下载的地方就放在项目的根目录。</p>
+
+<p><img src="../assets/images/gulp/node_modules.jpg" /></p>
+
+<h1 id="cnpm">三、cnpm</h1>
+
+<p>因为npm安装插件是从国外服务器下载，受网络影响大，可能出现异常。</p>
+
+<p>在国内推荐使用<a href="https://npm.taobao.org/" target="_blank">淘宝NPM镜像</a>。
+“这是一个完整 npmjs.org 镜像，你可以用此代替官方版本(只读)，同步频率目前为 10分钟 一次以保证尽量与官方服务同步”。</p>
+
+<p>安装指令如下：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">npm</span> <span class="n">install</span> <span class="o">-</span><span class="n">g</span> <span class="n">cnpm</span> <span class="o">--</span><span class="n">registry</span><span class="o">=</span><span class="n">https</span><span class="ss">:/</span><span class="o">/</span><span class="n">registry</span><span class="p">.</span><span class="nf">npm</span><span class="p">.</span><span class="nf">taobao</span><span class="p">.</span><span class="nf">org</span>
+</code></pre>
+</div>
+
+<p>注意安装的时候会出现错误提示，你可以关闭命令窗口再打开，打入“cnpm -v”可以查看版本号。cnpm跟npm用法完全一致。</p>
+
+<p><img src="../assets/images/gulp/cnpm.gif" /></p>
+
+<h1 id="gulp">四、全局安装gulp</h1>
+
+<p>注意下面的指令变成了“cnpm”：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">cnpm</span> <span class="n">install</span> <span class="n">gulp</span> <span class="o">-</span><span class="n">g</span>
+</code></pre>
+</div>
+
+<p>如果在某个工程文件夹中提示错误，那就手动再安装下“<a href="https://npm.taobao.org/package/gulp" target="_blank">gulp</a>”：</p>
+
+<p><img src="../assets/images/gulp/global.gif" /></p>
+
+<h1 id="packagejson">五、新建package.json文件</h1>
+
+<p>在命令窗口输入指令<strong>“cnpm init”</strong>。如果在Git Bash打这个指令，会报<strong>“No gulpfile found”</strong>的错误。</p>
+
+<p><img src="../assets/images/gulp/package.png" /></p>
+
+<h1 id="gulpfilejs">六、新建gulpfile.js文件</h1>
+
+<p>gulpfile.js是gulp项目的配置文件，里面是task的配置。简易代码如下：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">gulp</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp'</span><span class="p">);</span>
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'default'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// 将你的默认的任务代码放在这</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<h1 id="nodemodules">七、删除node_modules文件夹</h1>
+
+<p>当安装了各种插件后，在你相应的目录下面会出现node_modules文件夹。</p>
+
+<p>里面又嵌套了很深的文件夹目录，如果你用右键删除的方式，会变得很慢，并且还会提示错误“无法删除”。</p>
+
+<p><img src="../assets/images/gulp/node_modules2.png" /></p>
+
+<p>这里有个方法，用npm里面一个专门用于删除的模块插件“<a href="https://npm.taobao.org/package/rimraf" target="_blank">rimraf</a>”。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">cnpm</span> <span class="n">install</span> <span class="o">-</span><span class="n">g</span> <span class="n">rimraf</span>
+</code></pre>
+</div>
+
+<p>只需要打简单的指令就可删除：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">cd</span> <span class="n">xxx</span><span class="p">[</span><span class="kp">include</span> <span class="n">node_modules</span> <span class="n">folder</span><span class="p">]</span> <span class="o">/</span><span class="sr">/用cd指令将文件目录设置到包含nod_modules的位置
+rimraf nod_modules
+</span></code></pre>
+</div>
+
+            </div>
+        </div>
+        <div class="col-md-2">
+            <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top">
+    <ul class="nav bs-docs-sidenav">
+        
+        
+        <li class="active">
+            
+            <a href="#nodejs">安装node.js</a>
+            
+        </li>
+        
+        
+        <li>
+            
+            <a href="#npm">npm</a>
+            
+        </li>
+        
+        
+        <li>
+            
+            <a href="#cnpm">cnpm</a>
+            
+        </li>
+        
+        
+        <li>
+            
+            <a href="#gulp">全局安装gulp</a>
+            
+        </li>
+        
+        
+        <li>
+            
+            <a href="#packagejson">新建package.json文件</a>
+            
+        </li>
+        
+        
+        <li>
+            
+            <a href="#gulpfilejs">新建gulpfile.js文件</a>
+            
+        </li>
+        
+        
+        <li>
+            
+            <a href="#nodemodules">删除node_modules文件夹</a>
+            
+        </li>
+        
+    </ul>
+    <a href="#top" class="back-to-top">返回顶部</a>
+</nav>
+        </div>
+    </div>
+</div>
+
+<footer class="footer navbar-inverse navbar-fixed-bottom">
+    <p class="copyright">&copy;2016 上海易点时空网络有限公司 沪ICP备12046769号-2</p>
+</footer>
+
+</body>
+</html>
+

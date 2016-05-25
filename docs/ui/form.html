@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PrimusUI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/docs/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/docs/css/docs.css" rel="stylesheet" type="text/css">
+    <link href="/docs/css/syntax.css" rel="stylesheet" type="text/css">
+    <link href="http://h5dev.chelun.com/libs/ui/css/all-normal.css" rel="stylesheet" type="text/css">
+    <link href="/docs/css/theme.css" rel="stylesheet" type="text/css">
+    <script src="/docs/js/jquery.min.js"></script>
+    <script src="/docs/js/bootstrap.min.js"></script>
+    <script src="/docs/js/docs.min.js"></script>
+</head>
+
+<body>
+<header id="top">
+    <div class="row-fluid">
+        <div class="navbar navbar-inverse" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/docs/">PrimusUI</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/docs/ui/typeface.html">UI库</a></li>
+                    <li class="active"><a href="/docs/gulp/install.html">Gulp</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2 hidden-xs">
+            <div class="sidebar well">
+    
+        <h1>基础样式</h1>
+<ul>
+    <li><a href="/docs/ui/typeface.html">文本（typeface）</a></li>
+    <li><a href="/docs/ui/icon.html">图标（icon）</a></li>
+    <li><a href="/docs/ui/grid.html">网格（grid）</a></li>
+    <li><a href="/docs/ui/border.html">边框（border）</a></li>
+    <li><a href="/docs/ui/layout.html">布局（layout）</a></li>
+</ul>
+<h1>UI组件</h1>
+<ul class="mb20">
+    <li><a href="/docs/ui/label.html">标签（label）</a></li>
+    <li><a href="/docs/ui/badge.html">微标（badge）</a></li>
+    <li><a href="/docs/ui/button.html">按钮（button）</a></li>
+    <li><a href="/docs/ui/list.html">列表（list）</a></li>
+    <li><a href="/docs/ui/table.html">表格（table）</a></li>
+    <li><a href="/docs/ui/form.html">表单（form）</a></li>
+</ul>
+<div class="text-danger">
+    <p>UI库中的CSS是通过SASS编译生成。</p>
+    <p>UI库与flexible.js配合使用。</p>
+    <p>UI库除了字体、边框宽度等，大部分是使用rem作为单位，可以在gulp中引入插件，自动计算。</p>
+</div>
+<p>扫描下面的二维码，查看在线demo</p>
+<img src="/docs/assets/images/ui.png" width="100%"/>
+    
+</div>
+        </div>
+        <div class="col-md-8">
+            <div class="well">
+                <h1 class="none"><a href="form.html">表单（component/form.scss）</a></h1>
+                <p>表单的容器将是一个<strong>“form”</strong>标签，给这个标签赋样式<strong>“.ui-form”</strong>，简单的结构如下：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"ui-form"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"ui-form-item"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;label&gt;</span>输入框<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"ui-control"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">placeholder=</span><span class="s">"正常的情况"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;/section&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</code></pre>
+</div>
+
+<p>每个<strong>“li”</strong>都要被赋<strong>“ui-form-item”</strong>样式，左边有说明的就用<strong>“label”</strong>包裹，控件部分用样式<strong>“ui-control”</strong>包裹。</p>
+
+<p><strong>“ui-form-item”</strong>内可以控制左、右、中对齐，分别是<strong>“tl”</strong>、<strong>“tr”</strong>以及<strong>“td”</strong>。</p>
+
+<p>与列表一样，也可以与<a href="grid.html">网格</a>、<a href="border.html">边框</a>、<a href="layout.html">布局</a>等结合使用。</p>
+
+<h1 id="normal">一、普通控件（normal）</h1>
+
+<h5 id="show"><strong>1）展示（show）</strong></h5>
+
+<p>展示就是没有控件，直接将文字显示出来，下面直接用了个<strong>“p”</strong>标签。</p>
+
+<div class="demo-border">
+  <form action="#" class="ui-form">
+    <ul>
+      <li class="ui-flex ui-form-item">
+        <label>展示项</label>
+        <section class="ui-control ui-col-1">
+          <p class="tr">445331199401055317</p>
+        </section>
+      </li>
+    </ul>
+  </form>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"ui-flex ui-form-item"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label&gt;</span>展示项<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"ui-control ui-col-1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"tr"</span><span class="nt">&gt;</span>445331199401055317<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/section&gt;</span>
+<span class="nt">&lt;/li&gt;</span>
+</code></pre>
+</div>
+
+<h5 id="inputtextarea"><strong>2）输入框或多选（input，textarea）</strong></h5>
+
+<div class="demo-border">
+  <form action="#" class="ui-form">
+    <ul>
+      <li class="ui-flex ui-form-item ui-border-b ui-flex-column-center">
+        <label>输入框</label>
+        <section class="ui-control ui-col-1">
+          <input type="text" placeholder="正常的情况" />
+        </section>
+      </li>
+      <li class="ui-flex ui-form-item ui-border-b">
+        <label>多选框</label>
+        <section class="ui-control ui-col-1">
+          <textarea placeholder="多选的情况" rows="2" cols="10" class="tr"></textarea>
+        </section>
+      </li>
+    </ul>
+  </form>
+</div>
+
+<p>大部分代码都差不多，只是<strong>“p”</strong>标签变成了<strong>“input”</strong>或<strong>“textarea”</strong>，还有就是在弹性布局中会有些对齐方式。</p>
+
+<p>例如下面的“<a href="grid.html#ui-flex-column-center">ui-flex-column-center</a>”样式，还涉及了弹性布局的空间设置“<a href="grid.html#col">ui-col-1</a>”。</p>
+
+<p>列表中很多会有间隔线，可以用边框样式中的“<a href="border.html">ui-border-b</a>”实现。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"ui-flex ui-form-item ui-border-b ui-flex-column-center"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label&gt;</span>输入框<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"ui-control ui-col-1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">placeholder=</span><span class="s">"正常的情况"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/section&gt;</span>
+<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"ui-flex ui-form-item ui-border-b"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label&gt;</span>多选框<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"ui-control ui-col-1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;textarea</span> <span class="na">placeholder=</span><span class="s">"多选的情况"</span> <span class="na">rows=</span><span class="s">"2"</span> <span class="na">cols=</span><span class="s">"10"</span> <span class="na">class=</span><span class="s">"tr"</span><span class="nt">&gt;&lt;/textarea&gt;</span>
+  <span class="nt">&lt;/section&gt;</span>
+<span class="nt">&lt;/li&gt;</span>
+</code></pre>
+</div>
+
+<h5 id="color"><strong>3）颜色行（color）</strong></h5>
+
+<p>默认设置了两种颜色，错误的红色，以及正确的绿色，在“form.scss”中有个私有@mixin<strong>“_form”</strong>，可以自定义颜色。</p>
+
+<p>只需要在<strong>“li”</strong>标签上赋<strong>“ui-form-error”</strong>或<strong>“ui-form-success”</strong>即可。</p>
+
+<div class="demo-border">
+  <form action="#" class="ui-form">
+    <ul>
+      <li class="ui-flex ui-form-item ui-border-b ui-flex-column-center ui-form-error">
+        <label>错误框</label>
+        <section class="ui-control ui-col-1">
+          <input type="text" placeholder="错误的情况" />
+        </section>
+      </li>
+      <li class="ui-flex ui-form-item ui-border-b ui-flex-column-center ui-form-success">
+        <label>正确框</label>
+        <section class="ui-control ui-col-1">
+          <input type="text" placeholder="正确的情况" />
+        </section>
+      </li>
+    </ul>
+  </form>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"ui-form-item ui-form-error"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label&gt;</span>错误框<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"ui-control"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">placeholder=</span><span class="s">"错误的情况"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/section&gt;</span>
+<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"ui-form-item ui-form-success"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label&gt;</span>正确框<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"ui-control"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">placeholder=</span><span class="s">"正确的情况"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/section&gt;</span>
+<span class="nt">&lt;/li&gt;</span>
+</code></pre>
+</div>
+
+<h5 id="mixed"><strong>4）按钮与输入框混排（mixed）</strong></h5>
+
+<p>需要在<strong>“li”</strong>中添加个样式<strong>“ui-form-item-btn”</strong>。</p>
+
+<div class="demo-border">
+  <form action="#" class="ui-form">
+    <ul>
+      <li class="ui-flex ui-form-item ui-form-item-btn ui-border-b">
+        <label>按钮与输入框</label>
+        <section class="ui-control ui-col-1 ui-flex ui-flex-row-between">
+          <input type="text" placeholder="请输入手机号码" />
+          <button type="button" class="ui-width-8">发送短信</button>
+        </section>
+      </li>
+    </ul>
+  </form>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"ui-flex ui-form-item ui-form-item-btn ui-border-b"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label&gt;</span>加按钮<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"ui-control ui-col-1 ui-flex ui-flex-row-between"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">placeholder=</span><span class="s">"请输入手机号码"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"ui-width-8"</span><span class="nt">&gt;</span>发送短信<span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;/section&gt;</span>
+<span class="nt">&lt;/li&gt;</span>
+</code></pre>
+</div>
+
+<h1 id="radio">二、单选框（radio）</h1>
+
+<p>单选框的样式是单独放在“component/radio.scss”中。</p>
+
+<p>有个私有@mixin<strong>“_radio”</strong>，可以控制宽度，右与下的外边距。</p>
+
+<p>单选框内的宽度高度等单位都是px，为了精确。</p>
+
+<p><strong>“ui-radio”</strong>内的单选框是<strong>“inline-block”</strong>标签，而<strong>“ui-radio-row”</strong>内的单选框是<strong>“block”</strong>标签。</p>
+
+<div class="demo-border">
+  <form action="#" class="ui-form">
+    <ul>
+      <li class="ui-flex ui-form-item">
+        <label>一行单选框</label>
+        <section class="ui-control ui-col-1 tr">
+          <label class="ui-radio">
+             <input type="radio" name="radio1" /><span>男</span>
+          </label>
+          <label class="ui-radio">
+             <input type="radio" name="radio1" /><span>女</span>
+           </label>
+        </section>
+      </li>
+      <li class="ui-flex ui-form-item">
+        <label>多行单选框</label>
+        <section class="ui-control ui-col-1 tr">
+          <label class="ui-radio ui-radio-row">
+             <input type="radio" name="radio2" /><span>男</span>
+          </label>
+          <label class="ui-radio ui-radio-row">
+             <input type="radio" name="radio2" /><span>女</span>
+          </label>
+        </section>
+      </li>
+    </ul>
+  </form>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"ui-flex ui-form-item"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label&gt;</span>一行单选框<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"ui-control ui-col-1 tr"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"ui-radio"</span><span class="nt">&gt;</span>
+       <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"radio1"</span><span class="nt">&gt;&lt;span&gt;</span>男<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"ui-radio"</span><span class="nt">&gt;</span>
+       <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"radio1"</span><span class="nt">&gt;&lt;span&gt;</span>女<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;/section&gt;</span>
+<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"ui-flex ui-form-item"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label&gt;</span>多行单选框<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"ui-control ui-col-1 tr"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"ui-radio ui-radio-row"</span><span class="nt">&gt;</span>
+       <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"radio2"</span><span class="nt">&gt;&lt;span&gt;</span>男<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"ui-radio ui-radio-row"</span><span class="nt">&gt;</span>
+       <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"radio2"</span><span class="nt">&gt;&lt;span&gt;</span>女<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;/section&gt;</span>
+<span class="nt">&lt;/li&gt;</span>
+</code></pre>
+</div>
+
+<h1 id="checkbox">三、多选框（checkbox）</h1>
+
+<p>多选框的样式是单独放在“component/checkbox.scss”中。</p>
+
+<p>有个私有@mixin<strong>“_checkbox”</strong>，可以控制宽度，右与下的外边距。</p>
+
+<p>多选框内的宽度高度等单位都是px，为了精确。</p>
+
+<p><strong>“ui-checkbox”</strong>内的多选框是<strong>“inline-block”</strong>标签，而<strong>“ui-checkbox-row”</strong>内的多选框是<strong>“block”</strong>标签。</p>
+
+<div class="demo-border">
+  <form action="#" class="ui-form">
+    <ul>
+      <li class="ui-flex ui-form-item">
+        <label>多选框</label>
+        <section class="ui-control ui-col-1 tr">
+          <label class="ui-checkbox">
+                            <input type="checkbox" name="checkbox1" /><span>多选框一</span>
+          </label>
+          <label class="ui-checkbox">
+                            <input type="checkbox" name="checkbox1" /><span>多选框二</span>
+          </label>
+        </section>
+      </li>
+      <li class="ui-flex ui-form-item">
+        <label>多选框</label>
+        <section class="ui-control ui-col-1 tr">
+          <label class="ui-checkbox ui-checkbox-row">
+                            <input type="checkbox" name="checkbox2" /><span>多选框一</span>
+          </label>
+          <label class="ui-checkbox ui-checkbox-row">
+                            <input type="checkbox" name="checkbox2" /><span>多选框二</span>
+          </label>
+        </section>
+      </li>
+    </ul>
+  </form>
+</div>
+
+<p>代码与上面的单选框相似，只是<strong>“radio”</strong>变成了<strong>“checkbox”</strong>。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"ui-flex ui-form-item"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label&gt;</span>多选框<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"ui-control ui-col-1 tr"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"ui-checkbox"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"checkbox1"</span><span class="nt">&gt;&lt;span&gt;</span>多选框一<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"ui-checkbox"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"checkbox1"</span><span class="nt">&gt;&lt;span&gt;</span>多选框二<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;/section&gt;</span>
+<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"ui-flex ui-form-item"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label&gt;</span>多选框<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"ui-control ui-col-1 tr"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"ui-checkbox ui-checkbox-row"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"checkbox2"</span><span class="nt">&gt;&lt;span&gt;</span>多选框一<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"ui-checkbox ui-checkbox-row"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"checkbox2"</span><span class="nt">&gt;&lt;span&gt;</span>多选框二<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;/section&gt;</span>
+<span class="nt">&lt;/li&gt;</span>
+</code></pre>
+</div>
+
+<h1 id="switch">四、开关（switch）</h1>
+
+<p>开关的样式是单独放在“component/switch.scss”中。</p>
+
+<p>有个私有@mixin<strong>“_switchDpr”</strong>，可以控制宽度和高度。</p>
+
+<p>主要的画圆、画框等操作是在另外一个私有@mixin<strong>“_switch”</strong>中，<strong>“_switchDpr”</strong>内部是在调用<strong>“_switch”</strong>。</p>
+
+<div class="demo-border">
+  <form action="#" class="ui-form">
+    <ul>
+      <li class="ui-flex ui-form-item">
+        <label>开关项</label>
+        <section class="ui-control ui-col-1 tr">
+          <label class="ui-switch">
+            <input type="checkbox" />
+          </label>
+        </section>
+      </li>
+    </ul>
+  </form>
+</div>
+
+<p>下面的代码就是给<strong>“label”</strong>加了个样式<strong>“ui-switch”</strong>后就会有开关效果。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"ui-flex ui-form-item"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label&gt;</span>开关项<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"ui-control ui-col-1 tr"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"ui-switch"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;/section&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</code></pre>
+</div>
+
+            </div>
+        </div>
+        <div class="col-md-2">
+            <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top">
+    <ul class="nav bs-docs-sidenav">
+        
+        
+        <li class="active">
+            
+            <a href="#normal">普通控件</a>
+            
+            <ul class="nav">
+                
+                <li><a href="#show">展示</a></li>
+                
+                <li><a href="#inputtextarea">输入框或多选</a></li>
+                
+                <li><a href="#color">颜色行</a></li>
+                
+                <li><a href="#mixed">按钮与输入框混排</a></li>
+                
+            </ul>
+            
+        </li>
+        
+        
+        <li>
+            
+            <a href="#radio">单选框</a>
+            
+        </li>
+        
+        
+        <li>
+            
+            <a href="#checkbox">多选框</a>
+            
+        </li>
+        
+        
+        <li>
+            
+            <a href="#switch">开关</a>
+            
+        </li>
+        
+    </ul>
+    <a href="#top" class="back-to-top">返回顶部</a>
+</nav>
+        </div>
+    </div>
+</div>
+
+<footer class="footer navbar-inverse navbar-fixed-bottom">
+    <p class="copyright">&copy;2016 上海易点时空网络有限公司 沪ICP备12046769号-2</p>
+</footer>
+
+</body>
+</html>
+
