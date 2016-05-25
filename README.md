@@ -48,6 +48,7 @@ PrimusUI
 
 # CSS特点
 1、响应式布局，大量使用rem、弹性属性、百分比属性，可适应移动端多种屏幕。
+<img src="assets/img/default.jpg"/>
 
 2、normalize.scss：在流行的重置样式“<a href="https://necolas.github.io/normalize.css/" target="_blank">normalize.css</a>”
 的基础上，做出更适合移动端的样式调整。
