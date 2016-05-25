@@ -7,7 +7,7 @@ Primus名字取自于《变形金刚》中的元始天尊。
 
 在线demo：
 
-<img src="assets/img/demo-qrcode.png" width="100" height="100"/>
+<img src="assets/img/demo-qrcode.png" width="150" height="150"/>
 
 在线文档：<a href="https://pwstrick.github.com/docs/ui/typeface.html">点击查看</a>
 
