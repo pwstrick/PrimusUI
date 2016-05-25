@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PrimusUI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/docs/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/docs/css/docs.css" rel="stylesheet" type="text/css">
+    <link href="/docs/css/syntax.css" rel="stylesheet" type="text/css">
+    <link href="http://h5dev.chelun.com/libs/ui/css/all-normal.css" rel="stylesheet" type="text/css">
+    <link href="/docs/css/theme.css" rel="stylesheet" type="text/css">
+    <script src="/docs/js/jquery.min.js"></script>
+    <script src="/docs/js/bootstrap.min.js"></script>
+    <script src="/docs/js/docs.min.js"></script>
+</head>
+
+<body>
+<header id="top">
+    <div class="row-fluid">
+        <div class="navbar navbar-inverse" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/docs/">PrimusUI</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/docs/ui/typeface.html">UI库</a></li>
+                    <li class="active"><a href="/docs/gulp/install.html">Gulp</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2 hidden-xs">
+            <div class="sidebar well">
+    
+        <h1>基础样式</h1>
+<ul>
+    <li><a href="/docs/ui/typeface.html">文本（typeface）</a></li>
+    <li><a href="/docs/ui/icon.html">图标（icon）</a></li>
+    <li><a href="/docs/ui/grid.html">网格（grid）</a></li>
+    <li><a href="/docs/ui/border.html">边框（border）</a></li>
+    <li><a href="/docs/ui/layout.html">布局（layout）</a></li>
+</ul>
+<h1>UI组件</h1>
+<ul class="mb20">
+    <li><a href="/docs/ui/label.html">标签（label）</a></li>
+    <li><a href="/docs/ui/badge.html">微标（badge）</a></li>
+    <li><a href="/docs/ui/button.html">按钮（button）</a></li>
+    <li><a href="/docs/ui/list.html">列表（list）</a></li>
+    <li><a href="/docs/ui/table.html">表格（table）</a></li>
+    <li><a href="/docs/ui/form.html">表单（form）</a></li>
+</ul>
+<div class="text-danger">
+    <p>UI库中的CSS是通过SASS编译生成。</p>
+    <p>UI库与flexible.js配合使用。</p>
+    <p>UI库除了字体、边框宽度等，大部分是使用rem作为单位，可以在gulp中引入插件，自动计算。</p>
+</div>
+<p>扫描下面的二维码，查看在线demo</p>
+<img src="/docs/assets/images/ui.png" width="100%"/>
+    
+</div>
+        </div>
+        <div class="col-md-8">
+            <div class="well">
+                <h1 class="none"><a href="badge.html">微标（component/badge.scss）</a></h1>
+                <p>以“ui-badge-”为前缀，默认有三种颜色，尺寸都一样。</p>
+
+<p>在“badge.scss”中有个私有@mixin，<strong>“_badge”</strong>，如果自己要扩展可以引用此@mixin，可控制名字、内边距、圆角以及颜色。</p>
+
+<div class="demo-border">
+  <div class="ui-badge-important">important</div>
+  <div class="ui-badge-success">success</div>
+  <div class="ui-badge-warning">warning</div>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ui-badge-important"</span><span class="nt">&gt;</span>important<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ui-badge-success"</span><span class="nt">&gt;</span>success<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ui-badge-warning"</span><span class="nt">&gt;</span>warning<span class="nt">&lt;/div&gt;</span>
+</code></pre>
+</div>
+
+            </div>
+        </div>
+        <div class="col-md-2">
+            <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top">
+    <ul class="nav bs-docs-sidenav">
+        
+    </ul>
+    <a href="#top" class="back-to-top">返回顶部</a>
+</nav>
+        </div>
+    </div>
+</div>
+
+<footer class="footer navbar-inverse navbar-fixed-bottom">
+    <p class="copyright">&copy;2016 上海易点时空网络有限公司 沪ICP备12046769号-2</p>
+</footer>
+
+</body>
+</html>
+

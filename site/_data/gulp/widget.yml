@@ -1,0 +1,23 @@
+- id: "config"
+  name: "全局配置Config"
+
+- id: "gulpwatch"
+  name: "监控gulp.watch"
+
+- id: "sasscss"
+  name: "sass编译与css压缩"
+
+- id: "javascript"
+  name: "JavaScript模块化合并与压缩"
+
+- id: "image"
+  name: "Image图片无损压缩"
+
+- id: "html"
+  name: "HTML压缩"
+
+- id: "fontmin"
+  name: "FontMin字体压缩"
+
+- id: "Server"
+  name: "启动一个本地Server"

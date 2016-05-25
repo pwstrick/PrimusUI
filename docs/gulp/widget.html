@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PrimusUI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/docs/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/docs/css/docs.css" rel="stylesheet" type="text/css">
+    <link href="/docs/css/syntax.css" rel="stylesheet" type="text/css">
+    <link href="http://h5dev.chelun.com/libs/ui/css/all-normal.css" rel="stylesheet" type="text/css">
+    <link href="/docs/css/theme.css" rel="stylesheet" type="text/css">
+    <script src="/docs/js/jquery.min.js"></script>
+    <script src="/docs/js/bootstrap.min.js"></script>
+    <script src="/docs/js/docs.min.js"></script>
+</head>
+
+<body>
+<header id="top">
+    <div class="row-fluid">
+        <div class="navbar navbar-inverse" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/docs/">PrimusUI</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/docs/ui/typeface.html">UI库</a></li>
+                    <li class="active"><a href="/docs/gulp/install.html">Gulp</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2 hidden-xs">
+            <div class="sidebar well">
+    
+        <h1>Gulp</h1>
+<ul>
+    <li><a href="/docs/gulp/install.html">安装</a></li>
+    <li><a href="/docs/gulp/widget.html">插件</a></li>
+</ul>
+    
+</div>
+        </div>
+        <div class="col-md-8">
+            <div class="well">
+                <h1 class="none"><a href="widget.html">插件</a></h1>
+                <p>以下关于插件的说明以及配置等仅供参考。</p>
+
+<blockquote>
+  <ol>
+    <li>Javascript打包工具使用的是webpack方式</li>
+    <li>CSS自动添加浏览器前缀使用了PostCSS插件中的“autoprefixer”</li>
+    <li>CSS中大部分的单位是rem，响应式开发。</li>
+    <li>将px自动转换为rem，使用了一个PostCSS中的另外一个插件“postcss-px2rem”。</li>
+  </ol>
+</blockquote>
+
+<p>查看<a href="../assets/js/config.js">config</a>示例文件，<a href="../assets/js/gulpfile.js">gulpfile</a>示例文件。</p>
+
+<h1 id="config">一、全局配置Config</h1>
+
+<p>可以将需要在gulpfile中引用的参数，放到这里，包括一些路径、打包方式、rem计算基值、版本控制等。例如：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'path'</span><span class="p">);</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1">//宏定义</span>
+    <span class="na">macro</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'__VERSION'</span><span class="p">:</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">().</span><span class="nx">toString</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
+    <span class="p">},</span>
+    <span class="c1">//CSS相关设置</span>
+    <span class="na">css</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">rem</span><span class="p">:</span> <span class="mi">64</span> <span class="c1">//rem计算基值</span>
+    <span class="p">},</span>
+    <span class="c1">//server相关设置</span>
+    <span class="na">server</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">release</span><span class="p">:</span> <span class="s1">'../../../dist/2016/'</span><span class="o">+</span><span class="nx">path</span><span class="p">.</span><span class="nx">basename</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">)</span><span class="o">+</span><span class="s1">'/'</span><span class="p">,</span> <span class="c1">//发布目录</span>
+        <span class="na">port</span><span class="p">:</span> <span class="mi">8002</span> <span class="c1">//端口</span>
+    <span class="p">},</span>
+    <span class="c1">//HTML相关</span>
+    <span class="na">html</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">collapseWhitespace</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">},</span>
+    <span class="c1">//webpack打包</span>
+    <span class="na">webpack</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">entry</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">index</span> <span class="p">:</span> <span class="s1">'./js/index.js'</span>
+        <span class="p">},</span>
+        <span class="na">output</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">filename</span><span class="p">:</span> <span class="s1">'[name].bundle.js'</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre>
+</div>
+
+<h1 id="gulpwatch">二、监控gulp.watch</h1>
+
+<p>这个是gulp自带的，就是当你的文件改动了后，就做相应的task。在配置文件中可以引入“<a href="https://npm.taobao.org/package/gulp-watch" target="_blank">gulp-watch</a>”。</p>
+
+<p>监控sass中的文件变化，一有变化就做sass的编译。“<em>*”与“</em>”这种语法可以参考《<a href="http://javascript.ruanyifeng.com/tool/gulp.html" target="_blank">Gulp：任务自动管理工具</a>》</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'watch'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">livereload</span><span class="p">.</span><span class="nx">listen</span><span class="p">();</span>
+	<span class="nx">gulp</span><span class="p">.</span><span class="nx">watch</span><span class="p">(</span><span class="s1">'sass/**/*.scss'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'sass'</span><span class="p">]);</span>
+	<span class="nx">gulp</span><span class="p">.</span><span class="nx">watch</span><span class="p">(</span><span class="s1">'./build/css/**/*.css'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'css'</span><span class="p">]);</span>
+	<span class="nx">gulp</span><span class="p">.</span><span class="nx">watch</span><span class="p">(</span><span class="s1">'js/**/*.js'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'js'</span><span class="p">]);</span>
+	<span class="nx">gulp</span><span class="p">.</span><span class="nx">watch</span><span class="p">(</span><span class="s1">'**.html'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'html'</span><span class="p">]);</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<p>livereload是用来监控页面修改，然后自动刷新页面修改部分，引用插件“<a href="https://npm.taobao.org/package/gulp-livereload" target="_blank">gulp-livereload</a>”。</p>
+
+<p>firefox或chrome要分别安装插件才可运行，chrom插件如下：</p>
+
+<p><img src="../assets/images/gulp/livereload.png" /></p>
+
+<p>安装完后会在浏览器中出现个小按钮。</p>
+
+<p><img src="../assets/images/gulp/livereload-btn.png" /></p>
+
+<p>注意是黑色的时候才是在执行中，还有就是要在相应的task中加相应的代码“pipe(livereload())”。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'css'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'sass'</span><span class="p">],</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">'./build/css/**/*.css'</span><span class="p">)</span>
+		<span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="nx">dist</span><span class="o">+</span><span class="s1">'css/'</span><span class="p">))</span>
+		<span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">livereload</span><span class="p">());</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<h1 id="sasscss">三、sass编译与css压缩</h1>
+
+<p>通过sass编写css，能更模块化，多人协作比较方便。先安装“<a href="https://npm.taobao.org/package/gulp-sass" target="_blank">gulp-sass</a>”。</p>
+
+<p>1）“.on(‘error’, sass.logError))”的作用是在编译错误的时候显示错误信息，但是不能中断编译。</p>
+
+<p>2）“postcss”就是<a href="http://postcss.org/" target="_blank">PostCSS</a>插件，执行px转rem的操作和自动添加CSS浏览器前缀。</p>
+
+<p>3）要执行这两个功能，需要引入“<a href="https://npm.taobao.org/package/gulp-postcss" target="_blank">gulp-postcss</a>”、
+“<a href="https://npm.taobao.org/package/postcss-px2rem" target="_blank">postcss-px2rem</a>”、
+“<a href="https://npm.taobao.org/package/autoprefixer" target="_blank">autoprefixer</a>”</p>
+
+<p>4）插件“autoprefixer”不仅仅是自动加“-webkit”、“-moz”等的前缀，还能自动添加兼容代码，例如flex弹性布局的不同写法。</p>
+
+<p>书写下图内容：</p>
+
+<p><img src="../assets/images/gulp/autoprefix1.jpg" /></p>
+
+<p>输出的内容如下：</p>
+
+<p><img src="../assets/images/gulp/autoprefix2.jpg" /></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'sass'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+	<span class="kd">var</span> <span class="nx">processors</span> <span class="o">=</span> <span class="p">[</span><span class="nx">px2rem</span><span class="p">({</span><span class="na">remUnit</span><span class="p">:</span> <span class="nx">config</span><span class="p">.</span><span class="nx">css</span><span class="p">.</span><span class="nx">rem</span><span class="p">}),</span> <span class="nx">autoprefixer</span><span class="p">()];</span>
+	<span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">'./sass/*.scss'</span><span class="p">)</span>
+		<span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">sass</span><span class="p">().</span><span class="nx">on</span><span class="p">(</span><span class="s1">'error'</span><span class="p">,</span> <span class="nx">sass</span><span class="p">.</span><span class="nx">logError</span><span class="p">))</span>
+		<span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">postcss</span><span class="p">(</span><span class="nx">processors</span><span class="p">))</span>
+		<span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">'./build/css/'</span><span class="p">)).</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">livereload</span><span class="p">());</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<p>编译sass与将css压缩到发布目录，分别放在了两个task中。</p>
+
+<p>cssnano就是在做CSS压缩，需要引入“<a href="https://npm.taobao.org/package/gulp-cssnano" target="_blank">gulp-cssnano</a>”。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'css'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'sass'</span><span class="p">],</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">'./build/css/**/*.css'</span><span class="p">)</span>
+		<span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">cssnano</span><span class="p">())</span>
+		<span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="nx">dist</span><span class="o">+</span><span class="s1">'css/'</span><span class="p">))</span>
+		<span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">livereload</span><span class="p">());</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<h1 id="javascript">四、JavaScript模块化合并与压缩</h1>
+
+<p>模块化合并使用“<a href="http://webpack.github.io/docs/webpack-for-browserify-users.html" target="_blank">webpack</a>”，
+需要引入插件“<a href="https://npm.taobao.org/package/webpack-stream" target="_blank">webpack-stream</a>”，
+github上面还有篇<a href="https://github.com/petehunt/webpack-howto/blob/master/README-zh.md" target="_blank">说明教程</a>。</p>
+
+<p>引用到了config.webpack中的配置参数。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nx">webpack</span><span class="err">:</span> <span class="p">{</span>
+  <span class="nl">entry</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nl">index</span><span class="p">:</span> <span class="s1">'./js/index.js'</span>
+  <span class="p">},</span>
+  <span class="nx">output</span><span class="err">:</span> <span class="p">{</span>
+    <span class="nl">filename</span><span class="p">:</span> <span class="s1">'[name].bundle.js'</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'webpack'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">'./js/*.js'</span><span class="p">)</span>
+		<span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">webpackStream</span><span class="p">(</span><span class="nx">config</span><span class="p">.</span><span class="nx">webpack</span><span class="p">))</span>
+		<span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">'./build/js/'</span><span class="p">)).</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">livereload</span><span class="p">());</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<p>脚本的合并与压缩是在两个task中实现的。压缩引用了插件“<a href="https://npm.taobao.org/package/gulp-uglify" target="_blank">gulp-uglify</a>”。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'js'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'webpack'</span><span class="p">],</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">'./build/js/*.js'</span><span class="p">)</span>
+		<span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">plumber</span><span class="p">())</span>
+		<span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">uglify</span><span class="p">())</span>
+		<span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="nx">dist</span><span class="o">+</span><span class="s1">'js/'</span><span class="p">)).</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">livereload</span><span class="p">());</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<h1 id="image">五、Image图片无损压缩</h1>
+
+<p>通过插件“<a href="https://npm.taobao.org/package/gulp-image" target="_blank">gulp-image</a>”压缩的图片，有时候能牙70%以上，非常给力。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'image'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">'./img/**'</span><span class="p">)</span>
+		<span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">image</span><span class="p">())</span>
+		<span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="nx">dist</span><span class="o">+</span><span class="s1">'img/'</span><span class="p">));</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<p><img src="../assets/images/gulp/image.png" /></p>
+
+<h1 id="html">六、HTML压缩</h1>
+
+<p>1）将HTML文件压缩，可以缩小很多，有很多参数可以选择，比如去除空格（collapseWhitespace）等，
+引入插件“<a href="https://npm.taobao.org/package/gulp-htmlmin" target="_blank">gulp-htmlmin</a>”</p>
+
+<p>2）给HTML中的JS文件、CSS文件等添加时间戳，可以防止更新后，还在被缓存。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'html'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+	<span class="c1">//生成时间戳</span>
+	<span class="kd">var</span> <span class="nx">stream</span> <span class="o">=</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">'./*.html'</span><span class="p">);</span>
+	<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">key</span> <span class="k">in</span> <span class="nx">config</span><span class="p">.</span><span class="nx">macro</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nx">config</span><span class="p">.</span><span class="nx">macro</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="nx">key</span><span class="p">))</span> <span class="p">{</span>
+			<span class="nx">stream</span> <span class="o">=</span> <span class="nx">stream</span><span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">replace</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">config</span><span class="p">.</span><span class="nx">macro</span><span class="p">[</span><span class="nx">key</span><span class="p">]));</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="nx">stream</span><span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">htmlmin</span><span class="p">({</span><span class="na">collapseWhitespace</span><span class="p">:</span> <span class="nx">config</span><span class="p">.</span><span class="nx">html</span><span class="p">.</span><span class="nx">collapseWhitespace</span><span class="p">})).</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="nx">dist</span><span class="p">)).</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">livereload</span><span class="p">());</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<h1 id="fontmin">七、FontMin字体压缩</h1>
+
+<p>网上有很多webfont，例如国外的<a href="https://fortawesome.github.io/Font-Awesome/" target="_blank">Font Awesome</a>，
+国内的<a href="http://www.iconfont.cn/" target="_blank">iconfont</a>。都能做出漂亮的自定义字体。</p>
+
+<p>与西文字体不同，由于字符集过大，中文字体无法享受 webfont 带来的便利，为了让中文字体也这么便利，我们需要对其进行min。
+引入插件“<a href="https://npm.taobao.org/package/gulp-fontmin" target="_blank">gulp-fontmin</a>”。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'font'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">'font/*.+(eot|svg|ttf|woff)'</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">fontmin</span><span class="p">({</span>
+          <span class="na">text</span><span class="p">:</span> <span class="s1">'人晒'</span>
+      <span class="p">}))</span>
+      <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">'dist/font'</span><span class="p">));</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<p>配置的两个字“人晒”与没配置的“国”，明显有区别。</p>
+
+<p><img src="../assets/images/gulp/font.png" /></p>
+
+<h1 id="server">八、启动一个本地Server</h1>
+
+<p>有些操作需要一个服务器环境才能执行，例如ajax，所以需要配置一个。</p>
+
+<p>引用插件“<a href="https://npm.taobao.org/package/gulp-connect" target="_blank">gulp-connect</a>”，就可以实现本地的Server。</p>
+
+<p>port参数可以在Config文件中定义。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'server'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+	<span class="nx">connect</span><span class="p">.</span><span class="nx">server</span><span class="p">({</span>
+		<span class="na">root</span><span class="p">:</span> <span class="nx">dist</span><span class="p">,</span>
+		<span class="na">port</span><span class="p">:</span> <span class="nx">config</span><span class="p">.</span><span class="nx">server</span><span class="p">.</span><span class="nx">port</span>
+	<span class="p">});</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<p><img src="../assets/images/gulp/server.jpg" /></p>
+
+            </div>
+        </div>
+        <div class="col-md-2">
+            <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top">
+    <ul class="nav bs-docs-sidenav">
+        
+        
+        <li class="active">
+            
+            <a href="#config">全局配置Config</a>
+            
+        </li>
+        
+        
+        <li>
+            
+            <a href="#gulpwatch">监控gulp.watch</a>
+            
+        </li>
+        
+        
+        <li>
+            
+            <a href="#sasscss">sass编译与css压缩</a>
+            
+        </li>
+        
+        
+        <li>
+            
+            <a href="#javascript">JavaScript模块化合并与压缩</a>
+            
+        </li>
+        
+        
+        <li>
+            
+            <a href="#image">Image图片无损压缩</a>
+            
+        </li>
+        
+        
+        <li>
+            
+            <a href="#html">HTML压缩</a>
+            
+        </li>
+        
+        
+        <li>
+            
+            <a href="#fontmin">FontMin字体压缩</a>
+            
+        </li>
+        
+        
+        <li>
+            
+            <a href="#Server">启动一个本地Server</a>
+            
+        </li>
+        
+    </ul>
+    <a href="#top" class="back-to-top">返回顶部</a>
+</nav>
+        </div>
+    </div>
+</div>
+
+<footer class="footer navbar-inverse navbar-fixed-bottom">
+    <p class="copyright">&copy;2016 上海易点时空网络有限公司 沪ICP备12046769号-2</p>
+</footer>
+
+</body>
+</html>
+

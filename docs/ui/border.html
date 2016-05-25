@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PrimusUI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/docs/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/docs/css/docs.css" rel="stylesheet" type="text/css">
+    <link href="/docs/css/syntax.css" rel="stylesheet" type="text/css">
+    <link href="http://h5dev.chelun.com/libs/ui/css/all-normal.css" rel="stylesheet" type="text/css">
+    <link href="/docs/css/theme.css" rel="stylesheet" type="text/css">
+    <script src="/docs/js/jquery.min.js"></script>
+    <script src="/docs/js/bootstrap.min.js"></script>
+    <script src="/docs/js/docs.min.js"></script>
+</head>
+
+<body>
+<header id="top">
+    <div class="row-fluid">
+        <div class="navbar navbar-inverse" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/docs/">PrimusUI</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/docs/ui/typeface.html">UI库</a></li>
+                    <li class="active"><a href="/docs/gulp/install.html">Gulp</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2 hidden-xs">
+            <div class="sidebar well">
+    
+        <h1>基础样式</h1>
+<ul>
+    <li><a href="/docs/ui/typeface.html">文本（typeface）</a></li>
+    <li><a href="/docs/ui/icon.html">图标（icon）</a></li>
+    <li><a href="/docs/ui/grid.html">网格（grid）</a></li>
+    <li><a href="/docs/ui/border.html">边框（border）</a></li>
+    <li><a href="/docs/ui/layout.html">布局（layout）</a></li>
+</ul>
+<h1>UI组件</h1>
+<ul class="mb20">
+    <li><a href="/docs/ui/label.html">标签（label）</a></li>
+    <li><a href="/docs/ui/badge.html">微标（badge）</a></li>
+    <li><a href="/docs/ui/button.html">按钮（button）</a></li>
+    <li><a href="/docs/ui/list.html">列表（list）</a></li>
+    <li><a href="/docs/ui/table.html">表格（table）</a></li>
+    <li><a href="/docs/ui/form.html">表单（form）</a></li>
+</ul>
+<div class="text-danger">
+    <p>UI库中的CSS是通过SASS编译生成。</p>
+    <p>UI库与flexible.js配合使用。</p>
+    <p>UI库除了字体、边框宽度等，大部分是使用rem作为单位，可以在gulp中引入插件，自动计算。</p>
+</div>
+<p>扫描下面的二维码，查看在线demo</p>
+<img src="/docs/assets/images/ui.png" width="100%"/>
+    
+</div>
+        </div>
+        <div class="col-md-8">
+            <div class="well">
+                <h1 class="none"><a href="border.html">边框（base/border.scss）</a></h1>
+                <p>在Retina屏会出现1px的问题，在这段代码中会做些处理。</p>
+
+<p>边框样式包括全边框，左、右、上、下单边框，左右、上下双边框，以及圆角边框。</p>
+
+<div class="demo-border">
+  <section class="demo-block">
+    <div class="ui-border ui-border-block">1px边框</div>
+  </section>
+  <section class="demo-block">
+    <div class="ui-border-t ui-border-block">1px上边框</div>
+  </section>
+  <section class="demo-block">
+    <div class="ui-border-b ui-border-block">1px下边框</div>
+  </section>
+  <section class="demo-block">
+    <div class="ui-border-l ui-border-block">1px左边框</div>
+  </section>
+  <section class="demo-block">
+    <div class="ui-border-r ui-border-block">1px右边框</div>
+  </section>
+  <section class="demo-block">
+    <div class="ui-border-lr ui-border-block">1px左右边框</div>
+  </section>
+  <section class="demo-block">
+    <div class="ui-border-tb ui-border-block">1px上下边框</div>
+  </section>
+  <section class="demo-block">
+    <div class="ui-border-radius ui-border-block">1px圆角</div>
+  </section>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ui-border"</span><span class="nt">&gt;</span>1px边框<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ui-border-t"</span><span class="nt">&gt;</span>1px上边框<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ui-border-b"</span><span class="nt">&gt;</span>1px下边框<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ui-border-l"</span><span class="nt">&gt;</span>1px左边框<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ui-border-r"</span><span class="nt">&gt;</span>1px右边框<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ui-border-lr"</span><span class="nt">&gt;</span>1px左右边框<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ui-border-tb"</span><span class="nt">&gt;</span>1px上下边框<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"ui-border-radius"</span><span class="nt">&gt;</span>1px圆角<span class="nt">&lt;/div&gt;</span>
+</code></pre>
+</div>
+
+            </div>
+        </div>
+        <div class="col-md-2">
+            <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top">
+    <ul class="nav bs-docs-sidenav">
+        
+    </ul>
+    <a href="#top" class="back-to-top">返回顶部</a>
+</nav>
+        </div>
+    </div>
+</div>
+
+<footer class="footer navbar-inverse navbar-fixed-bottom">
+    <p class="copyright">&copy;2016 上海易点时空网络有限公司 沪ICP备12046769号-2</p>
+</footer>
+
+</body>
+</html>
+

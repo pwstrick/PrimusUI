@@ -1,0 +1,20 @@
+- id: "nodejs"
+  name: "安装node.js"
+
+- id: "npm"
+  name: "npm"
+
+- id: "cnpm"
+  name: "cnpm"
+
+- id: "gulp"
+  name: "全局安装gulp"
+
+- id: "packagejson"
+  name: "新建package.json文件"
+
+- id: "gulpfilejs"
+  name: "新建gulpfile.js文件"
+
+- id: "nodemodules"
+  name: "删除node_modules文件夹"

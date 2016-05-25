@@ -1,0 +1,20 @@
+- id: "normal"
+  name: "普通控件"
+  children:
+   - id: "show"
+     name: "展示"
+   - id: "inputtextarea"
+     name: "输入框或多选"
+   - id: "color"
+     name: "颜色行"
+   - id: "mixed"
+     name: "按钮与输入框混排"
+
+- id: "radio"
+  name: "单选框"
+
+- id: "checkbox"
+  name: "多选框"
+
+- id: "switch"
+  name: "开关"

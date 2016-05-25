@@ -1,0 +1,20 @@
+- id: "size"
+  name: "尺寸"
+  children:
+   - id: "small"
+     name: "普通小按钮"
+   - id: "normal"
+     name: "普通按钮"
+   - id: "large"
+     name: "大按钮"
+
+- id: "color"
+  name: "颜色"
+  children:
+   - id: "primary"
+     name: "蓝色"
+   - id: "danger"
+     name: "红色"
+
+- id: "progress"
+  name: "进度条按钮"

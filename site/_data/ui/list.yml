@@ -1,0 +1,14 @@
+- id: "block"
+  name: "传统布局"
+
+- id: "multi"
+  name: "多列布局"
+
+- id: "arrow"
+  name: "箭头列表"
+
+- id: "img"
+  name: "图文混排"
+
+- id: "loading"
+  name: "加载效果"

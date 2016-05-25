@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PrimusUI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/docs/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/docs/css/docs.css" rel="stylesheet" type="text/css">
+    <link href="/docs/css/syntax.css" rel="stylesheet" type="text/css">
+    <link href="http://h5dev.chelun.com/libs/ui/css/all-normal.css" rel="stylesheet" type="text/css">
+    <link href="/docs/css/theme.css" rel="stylesheet" type="text/css">
+    <script src="/docs/js/jquery.min.js"></script>
+    <script src="/docs/js/bootstrap.min.js"></script>
+    <script src="/docs/js/docs.min.js"></script>
+</head>
+
+<body>
+<header id="top">
+    <div class="row-fluid">
+        <div class="navbar navbar-inverse" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/docs/">PrimusUI</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/docs/ui/typeface.html">UI库</a></li>
+                    <li class="active"><a href="/docs/gulp/install.html">Gulp</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2 hidden-xs">
+            <div class="sidebar well">
+    
+        <h1>基础样式</h1>
+<ul>
+    <li><a href="/docs/ui/typeface.html">文本（typeface）</a></li>
+    <li><a href="/docs/ui/icon.html">图标（icon）</a></li>
+    <li><a href="/docs/ui/grid.html">网格（grid）</a></li>
+    <li><a href="/docs/ui/border.html">边框（border）</a></li>
+    <li><a href="/docs/ui/layout.html">布局（layout）</a></li>
+</ul>
+<h1>UI组件</h1>
+<ul class="mb20">
+    <li><a href="/docs/ui/label.html">标签（label）</a></li>
+    <li><a href="/docs/ui/badge.html">微标（badge）</a></li>
+    <li><a href="/docs/ui/button.html">按钮（button）</a></li>
+    <li><a href="/docs/ui/list.html">列表（list）</a></li>
+    <li><a href="/docs/ui/table.html">表格（table）</a></li>
+    <li><a href="/docs/ui/form.html">表单（form）</a></li>
+</ul>
+<div class="text-danger">
+    <p>UI库中的CSS是通过SASS编译生成。</p>
+    <p>UI库与flexible.js配合使用。</p>
+    <p>UI库除了字体、边框宽度等，大部分是使用rem作为单位，可以在gulp中引入插件，自动计算。</p>
+</div>
+<p>扫描下面的二维码，查看在线demo</p>
+<img src="/docs/assets/images/ui.png" width="100%"/>
+    
+</div>
+        </div>
+        <div class="col-md-8">
+            <div class="well">
+                <h1 class="none"><a href="table.html">表格（component/table.scss）</a></h1>
+                <p>表格中的相邻边会被合并，单元格内横向和纵向的间距设为了0，<strong>“td，th”</strong>中已做自动换行。</p>
+
+<h1 id="default">一、默认无边框（default）</h1>
+
+<p>默认是给“table”元素赋<strong>“.table”</strong>类，<strong>“th，td，caption”</strong>可以控制向左、向右或居中对齐。</p>
+
+<div class="demo-border">
+  <table class="table">
+    <caption class="tc">无边框</caption>
+    <thead>
+      <tr>
+        <th>栏目一</th>
+        <th>栏目二</th>
+        <th>栏目三</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="tl">左对齐</td>
+        <td class="tc">居中对齐</td>
+        <td class="tr">右对齐</td>
+      </tr>
+      <tr>
+        <td>内容一</td>
+        <td>内容二</td>
+        <td>内容三</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;caption</span> <span class="na">class=</span><span class="s">"tc"</span><span class="nt">&gt;</span>无边框<span class="nt">&lt;/caption&gt;</span>
+  <span class="nt">&lt;thead&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;th&gt;</span>栏目一<span class="nt">&lt;/th&gt;</span>
+      <span class="nt">&lt;th&gt;</span>栏目二<span class="nt">&lt;/th&gt;</span>
+      <span class="nt">&lt;th&gt;</span>栏目三<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/thead&gt;</span>
+  <span class="nt">&lt;tbody&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"tl"</span><span class="nt">&gt;</span>左对齐<span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"tc"</span><span class="nt">&gt;</span>居中对齐<span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"tr"</span><span class="nt">&gt;</span>右对齐<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/tbody&gt;</span>
+<span class="nt">&lt;/table&gt;</span>
+</code></pre>
+</div>
+
+<h1 id="border">二、有边框（border）</h1>
+
+<p>只要给“table”多加一个样式<strong>“table-bordered”</strong>即可。</p>
+
+<div class="demo-border">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>栏目一</th>
+        <th>栏目二</th>
+        <th>栏目三</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>内容一</td>
+        <td>内容二</td>
+        <td>内容三</td>
+      </tr>
+      <tr>
+        <td>内容一</td>
+        <td>内容二</td>
+        <td>内容三</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table table-bordered"</span><span class="nt">&gt;</span>
+  //...
+<span class="nt">&lt;/table&gt;</span>
+</code></pre>
+</div>
+
+<h1 id="color">三、行的颜色（color）</h1>
+
+<p>默认有四种颜色，红、黄、蓝、绿。</p>
+
+<div class="demo-border">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>栏目一</th>
+        <th>栏目二</th>
+        <th>栏目三</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="success">
+        <td>success</td>
+        <td>success</td>
+        <td>success</td>
+      </tr>
+      <tr class="info">
+        <td>info</td>
+        <td>info</td>
+        <td>info</td>
+      </tr>
+      <tr class="important">
+        <td>important</td>
+        <td>important</td>
+        <td>important</td>
+      </tr>
+      <tr class="warning">
+        <td>warning</td>
+        <td>warning</td>
+        <td>warning</td>
+      </tr>
+      <tr>
+        <td>default</td>
+        <td>default</td>
+        <td>default</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table table-bordered"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;tbody&gt;</span>
+    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">"success"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;td&gt;</span>success<span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span>success<span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span>success<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">"info"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;td&gt;</span>info<span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span>info<span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span>info<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">"important"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;td&gt;</span>important<span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span>important<span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span>important<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">"warning"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;td&gt;</span>warning<span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span>warning<span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span>warning<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;td&gt;</span>default<span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span>default<span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span>default<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/tbody&gt;</span>
+<span class="nt">&lt;/table&gt;</span>
+</code></pre>
+</div>
+
+            </div>
+        </div>
+        <div class="col-md-2">
+            <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top">
+    <ul class="nav bs-docs-sidenav">
+        
+        
+        <li class="active">
+            
+            <a href="#default">默认无边框</a>
+            
+        </li>
+        
+        
+        <li>
+            
+            <a href="#border">有边框</a>
+            
+        </li>
+        
+        
+        <li>
+            
+            <a href="#color">行的颜色</a>
+            
+        </li>
+        
+    </ul>
+    <a href="#top" class="back-to-top">返回顶部</a>
+</nav>
+        </div>
+    </div>
+</div>
+
+<footer class="footer navbar-inverse navbar-fixed-bottom">
+    <p class="copyright">&copy;2016 上海易点时空网络有限公司 沪ICP备12046769号-2</p>
+</footer>
+
+</body>
+</html>
+

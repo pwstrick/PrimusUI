@@ -1,0 +1,367 @@
+body {
+    font-family: 微软雅黑, 'Open Sans', sans-serif;
+}
+
+@font-face {
+    font-family: "iconfont";
+    src: url(../font/iconfont.ttf) format("truetype");
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+input,textarea {
+    outline: none;
+}
+.tc {
+    text-align: center;
+}
+.mb20 {
+    margin-bottom: 20px;
+}
+.h100 {
+    height: 100px;
+}
+.h150 {
+    height: 150px;
+}
+.h40 {
+    height: 40px;
+}
+.container-fluid {
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+.container-px {
+    width: 1170px;
+    margin: 0 auto;
+}
+.navbar {
+    border-radius: 0;
+    margin-bottom: 0;
+}
+.navbar-inverse .navbar-nav>li.active>a:hover {
+    background: #777;
+}
+.copyright {
+    color: #ffffff;
+}
+
+.footer {
+    padding: 20px 0 10px;
+    text-align: center;
+}
+
+.footer a {
+    color: #ee4444;
+}
+.navbar-header {
+
+}
+.navbar-header img {
+    padding:0 15px;
+    float: left;
+}
+.sidebar h1 {
+    color: #ee4444;
+    font-size: 1.3em;
+}
+
+.sidebar a {
+    color: #428bca;
+}
+
+.sidebar li {
+    margin-top: .7em;
+    line-height: 1em;
+    margin-left: 10px;
+}
+
+.sidebar a:hover {
+    color: #3071a9;
+}
+
+.container-left {
+    margin: 0;
+}
+
+.well h1 {
+    color: #aa6708;
+    font-size: 1.4em;
+    margin: 30px 0 10px;
+    background: #fcf8e3;
+    padding: 10px 5px;
+    text-shadow: 1px 1px #000 ;
+}
+.well h1.none, .sidebar h1 {
+    background: none;
+    padding: 0;
+    color: #333;
+    text-shadow: none;
+    margin-top: 20px;
+}
+.well h1.title {
+    color: #428bca;
+}
+.well .time {
+    margin-bottom: 20px;
+}
+
+.well h1.none:first-of-type,
+.sidebar h1:first-of-type{
+    margin-top: 0;
+}
+
+.well h1.none a{
+    text-shadow: 1px 1px #000;
+}
+
+.well h5 {
+    margin-top: 20px;
+}
+.well h5 strong {
+    display: inline-block;
+    padding: 5px 2px;
+    background: #337ab7;
+    text-shadow: 1px 1px 1px #000;
+    color: #FFF;
+}
+.author {
+    color: #ee4444;
+}
+
+.author a {
+    color: #ee4444;
+}
+
+/*区块引用*/
+blockquote {
+    padding: 0;
+    font-size: 14px;
+}
+
+blockquote li {
+    margin-bottom: 5px;
+}
+
+/*给展现加个边框和内边距*/
+.demo-border {
+    border: 1px solid #CCC;
+    padding: 10px;
+    background: #FFF;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+/*表格样式*/
+
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td{
+    padding: 5px;
+    line-height: 1.42857143;
+}
+
+/*图标展示*/
+.demo-icons {
+    overflow: hidden;
+}
+.demo-icons li {
+    float: left;
+    height: 180px;
+    width: 195px;
+    text-align: center;
+}
+.demo-icons li i {
+    line-height: 1.4;
+    font-size: 52px;
+}
+.demo-block {
+    position: relative;
+    margin-bottom: 20px;
+}
+.demo-block .ui-border-block {
+    text-align: center;
+    padding: 5px;
+}
+
+/*内边距*/
+section[class^=ui-whitespace] {
+    border: 1px solid #CCC;
+    margin-bottom: 20px;
+    background: #dff0d8;
+}
+section[class^=ui-whitespace] div{
+    background: #ccc;
+    text-align: center;
+    color: #fff;
+    padding: 5px;
+}
+.ui-whitespace-xxl{
+    padding: 30px;
+}
+.ui-whitespace-xl{
+    padding: 25px;
+}
+.ui-whitespace-lg{
+    padding: 20px;
+}
+.ui-whitespace{
+    padding: 15px;
+}
+.ui-whitespace-sm{
+    padding: 10px;
+}
+.ui-whitespace-xs{
+    padding: 5px;
+}
+.ui-whitespace-xs-lr{
+    padding:0 5px;
+}
+.ui-whitespace-xs-tb{
+    padding:5px 0;
+}
+
+/*图片*/
+.demo-img {
+    width: 150px;
+    height: 80px;
+    background: #ccc;
+    margin-bottom: 10px;
+}
+
+/*弹性布局*/
+.ui-flex div[class^=ui-col],
+.ui-flex div[class^=ui-width],
+.ui-fluid div[class^=ui-width]{
+    background: #ccc;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 10px;
+}
+.ui-flex div[class^=ui-col],
+.ui-width-10{
+    margin:0 5px 5px 0;
+}
+
+/*标签*/
+div[class^=ui-label-],
+div[class^=ui-badge-]{
+    padding: 5px;
+}
+
+/*按钮*/
+.ui-btn-sm {
+    width: 110px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 6px;
+    font-size: 26px;
+}
+.ui-btn {
+    min-width: 110px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 6px;
+    font-size: 30px;
+}
+.ui-btn-lg {
+    font-size: 36px;
+    height: 88px;
+    line-height: 88px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.ui-btn-progress .ui-btn-inner {
+    border-radius: 6px 0 0 6px;
+}
+.ui-btn-progress .ui-btn-inner span {
+    width: 110px;
+}
+
+/*loading*/
+.ui-loading {
+    width: 40px;
+    height: 40px;
+}
+
+/*单选框*/
+.ui-radio input {
+    width: 26px;
+    height: 26px;
+    vertical-align: -6.5px
+}
+.ui-radio input:before {
+    width: 24px;
+    height: 24px;
+}
+.ui-radio input:checked:after {
+    width: 14px;
+    height: 14px;
+    margin-top: -7px;
+    margin-left: -7px
+}
+
+/*多选框*/
+.ui-checkbox input {
+    width: 32px
+}
+.ui-checkbox input:after {
+    line-height: 16px;
+    font-size: 32px;
+    top: -14.4px
+}
+.ui-form-item {
+    font-size: 16px
+}
+
+/*开关*/
+.ui-switch input {
+    width: 52px;
+    height: 32px;
+    border-radius: 16px
+}
+.ui-switch input:after {
+    width: 30px;
+    height: 30px
+}
+.ui-switch input:before {
+    width: 50px;
+    height: 32px;
+    border-radius: 15px;
+    border: 1px solid #d5d5d5;
+}
+.ui-switch input:checked:after {
+    left: 20px
+}
+
+.bs-docs-booticon-xl{
+    width: 424px;
+    border-radius: 10px;
+}
+
+/*作品堂*/
+.works {
+    padding: 10px;
+}
+.works > div{
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.works > div a {
+    display: block;
+}
+.works > div .img {
+    width: 100%;
+    background-size: contain;
+    background: no-repeat center center;
+    height: 200px;
+}
+.works > div:nth-of-type(3n) {
+    margin-right: 0;
+}
