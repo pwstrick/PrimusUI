@@ -5,7 +5,7 @@ Primus名字取自于《变形金刚》中的元始天尊。
 
 在网上参考了很多个现有的UI库，最终结合自己的理解，整理了这个简单的UI库，每段CSS少则几十行，多则也就一百多行。
 
-在线demo：
+<a href="http://pwstrick.github.io/PrimusUI/default.html">在线demo</a>：
 
 <img src="assets/img/demo-qrcode.png" width="150" height="150"/>
 
