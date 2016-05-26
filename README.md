@@ -7,9 +7,7 @@ Now many online open source UI library, coverage is very wide, can meet a lot of
 
 Because large and some small places may sometimes modify will be more strenuous.
 
-If the actual development may have its own control UI library will save a lot of development time,
-
-and can freely modify a different code depending on the scene.
+If the actual development may have its own control UI library will save a lot of development time,and can freely modify a different code depending on the scene.
 
 To this end, I draw a lot of online open source library, organize modify this simple set of code, we hope to develop will help.
 
