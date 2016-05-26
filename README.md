@@ -1,123 +1,118 @@
 ## PrimusUI
-小身材大用途，响应式页面，专注于移动端，轻松驾驭，为你所用，定制属于你自己的UI库。
+Great use of small stature, responsive page, focused on the mobile side, easy to manage, work for you to customize your own UI library.
 
-现在网上有许多开源的UI库，覆盖面很全，可满足很多场景。就因为大而全，有时候修改些小地方可能都会比较费劲。
+Primus name from "Transformers".
 
-实际开发中如果有一套自己可以驾驭的UI库，会节省很多开发时间，并能随心所欲的根据不同场景修改不同代码，
-为此，我借鉴了很多网上的开源库，整理修改了这套简单的代码集合，希望对大家的开发会有帮助。
+Now many online open source UI library, coverage is very wide, can meet a lot of scenes. Because large and some small places may sometimes modify will be more strenuous.
 
-Primus名字取自于《变形金刚》中的元始天尊。
+If the actual development may have its own control UI library will save a lot of development time, and can freely modify a different code depending on the scene.
 
-在网上参考了很多个现有的UI库，最终结合自己的理解，整理了这个简单的UI库，每段CSS少则几十行，多则也就一百多行。
+To this end, I draw a lot of online open source library, organize modify this simple set of code, we hope to develop will help.
 
-<a href="http://pwstrick.github.io/PrimusUI/default.html">在线demo</a>：
+This simple UI library, each CSS least a few dozen lines, as many as there is more than one hundred lines.
+
+<a href="http://pwstrick.github.io/PrimusUI/default.html">Online demo（在线demo）</a>：
 
 <img src="assets/img/demo-qrcode.png" width="150" height="150"/>
 
-项目主页：<a href="http://pwstrick.github.io/PrimusUI">点击查看</a>
+中文主页：<a href="http://pwstrick.github.io/PrimusUI">点击查看</a>
 
-在线文档：<a href="http://pwstrick.github.io/PrimusUI/docs/ui/typeface.html">点击查看</a>
+Online documentation（在线文档）：<a href="http://pwstrick.github.io/PrimusUI/docs/ui/typeface.html">Click to view</a>
 
-## 准备知识
-1、CSS开发使用了现在时髦的<a href="http://sass-lang.com/" target="_blank">SASS</a>，CSS预处理器。
+## Ready Knowledge
+1、CSS developed using now fashionable <a href="http://sass-lang.com/" target="_blank">SASS</a>, CSS preprocessor.
 
-2、代码构建工具使用了<a href="http://gulpjs.com/" target="_blank">Gulp</a>，增强工作流程。
-先要安装<a href="https://nodejs.org/en/" target="_blank">NodeJS</a>，
-在项目中有一个package.json文件，里面记录了依赖包，在当前目录中输入“npm install”可进行包的安装。
-（国内用户由于网络问题，需要借助淘宝的
-<a href="https://npm.taobao.org/" target="_blank">cnpm</a>。）
-如果初次接触，可以参考教程
-《<a href="http://www.cnblogs.com/strick/p/5151714.html" target="_blank">自动化构建工具gulp</a>》
+2、Code Morphing tool uses <a href="http://gulpjs.com/" target="_blank">Gulp</a>, enhanced workflow.
+First install <a href="https://nodejs.org/en/" target="_blank">NodeJS</a>，
+Package.json have a file in the project, which records the dependencies, enter "npm install" package can be installed in the current directory.
 
-3、文档是由Jekyll编译而成，
-<a href="http://jekyllrb.com/" target="_blank">Jekyll</a>是一个静态网站生成器。
-如果初次接触，可以参考一下教程
-《<a href="http://www.cnblogs.com/strick/p/5448570.html" target="_blank">用jekyll制作网站</a>》
+3、Is compiled from documents by the Jekyll,
+<a href="http://jekyllrb.com/" target="_blank">Jekyll</a> is a static site generator.
 
-4、借助<a href="https://github.com/amfe/lib-flexible" target="_blank">flexible.js</a>，
-通过计算html中的font-size（用于计算rem），设置viewport的放大倍数，来实现移动自适应。UI库中除了字体、边框宽度等，大部分是使用rem作为单位，可以引入
-（<a href="http://postcss.org/" target="_blank">PostCSS</a>插件中的
-“<a href="https://www.npmjs.com/package/px2rem" target="_blank">postcss-px2rem</a>”。），自动计算。
+4、With <a href="https://github.com/amfe/lib-flexible" target="_blank">flexible.js</a> by calculating the html font-size
+(for calculating rem), set the magnification of the viewport to mobile adaptation. UI library, in addition to fonts, border width, etc.,
+most of which are using rem as a unit, can be introduced (<a href="http://postcss.org/" target="_blank">PostCSS</a>)
+plug-in "<a href="https://www.npmjs.com/package/px2rem" target="_blank">postcss-px2rem</a>", calculated automatically.
 
-5、浏览器属性兼容是个烦人的事，通过引入PostCSS内的插件
-“<a href="https://www.npmjs.com/package/autoprefixer" target="_blank">autoprefixer</a>”，可自动匹配前缀。
-第4和第5条的配置写在gulpfile.js中。
+5、Browser is compatible attributes annoying thing by introducing plug PostCSS within
+"<a href="https://www.npmjs.com/package/autoprefixer" target="_blank">autoprefixer</a>", automatically matching prefix.
+Front and Article 5 paragraph 4 of the configuration write gulpfile.js.
 
-## 目录结构
+## Directory Structure
 ```html
 PrimusUI
-└─ ─ ─ ─ assets UI库展示页面中使用到的图片等
-└─ ─ ─ ─ css SASS编译出来的CSS代码
-└─ ─ ─ ─ docs  UI库文档说明，由工具Jekyll编译出来
-└─ ─ ─ ─ font  自定义字体
-└─ ─ ─ ─ js  JavaScript文件
-└─ ─ ─ ─ sass  CSS预处理文件
-└─ ─ ─ ─ site  Jekyll源文件
-└─ ─ gulpfile.js Gulp配置文件
-└─ ─ package.json  Gulp需要的依赖包
-└─ ─ open.bat  windows批处理，用于在当前目录中打开dos窗口
-└─ ─ *.html  UI库各模块展示页面
+└─ ─ ─ ─ assets UI library used to display page images, etc.
+└─ ─ ─ ─ css SASS compiled CSS code
+└─ ─ ─ ─ docs  UI library documentation, compiled by the tool Jekyll
+└─ ─ ─ ─ font  Custom Fonts
+└─ ─ ─ ─ js  JavaScript files
+└─ ─ ─ ─ sass  CSS preprocessed file
+└─ ─ ─ ─ site  Jekyll source file
+└─ ─ gulpfile.js Gulp profile
+└─ ─ package.json  Gulp required dependencies
+└─ ─ open.bat  windows batch dos window to open in the current directory
+└─ ─ *.html  UI library modules display page
 ```
 
-## CSS特点
-1、响应式布局，大量使用rem、弹性属性、百分比属性，可适应移动端多种屏幕。
+## UI Library Features
+1、Responsive layout, extensive use rem, elastic properties, the percentage of properties that can be adapted to a variety of mobile terminal screen.
 
 <img src="assets/img/default.jpg"/>
 
-2、normalize.scss：在流行的重置样式“<a href="https://necolas.github.io/normalize.css/" target="_blank">normalize.css</a>”
-的基础上，做出更适合移动端的样式调整。
+2、normalize.scss：Reset in the popular style "<a href="https://necolas.github.io/normalize.css/" target="_blank">normalize.css</a>"
+based on the style to make adjustments more suitable mobile terminal.
 
-3、typeface.scss：列举了多种场景的字体颜色与大小，字截断，移动端常用的箭头标记。
+3、typeface.scss：He cited a variety of scenarios font color and size, character truncation, conventional mobile terminal arrow mark.
 
 <img src="assets/img/typeface.jpg"/>
 
-4、icon.scss：可在第三方<a href="http://www.iconfont.cn/" target="_blank">iconfont</a>
-库，按需下载现成的图标，也可在此网站中上传svg文件，自动制成特定图标。
+4、icon.scss：<a href="http://www.iconfont.cn/" target="_blank">Iconfont</a> in third-party libraries,
+on-demand download existing icons can also upload svg files on this site, automatically made specific icon.
 
 <img src="assets/img/icon.jpg"/>
 
-5、grid.scss：多样化的网格实现，
-网格中包括先进的弹性设置(预设了12种宽度)、百分比设置(预设了24种宽度)，左偏移，左移动，右移动(也是24种)。
-与PC端的固定宽度不同，移动端屏幕各异，所以不能将每个元素的宽度定死。而弹性宽度或百分比在设置后可自动计算数值。
-相比较于传统的float布局，弹性布局更容易控制，尤其是在对齐方式中设置中。
+5、grid.scss：Grid achieve diversification,
+Including advanced grid resilient settings (12 preset widths), set as a percentage (24 kinds of preset width), the left shift, move left, right movement (also 24 kinds).
+End PC with a fixed width of different, different mobile end screen, so you can not set the width of each element will die. Elastic width or percentage after setting automatically calculated values.
+Compared to traditional float layout, flexible layout easier to control, especially in alignment of the setting.
 
 <img src="assets/img/grid.jpg"/>
 
-6、border.scss：有效解决1px边框，在移动端各种屏幕的显示问题。
+6、border.scss：Effective solution 1px border, in a variety of mobile terminal screen display problems.
 
 <img src="assets/img/border.jpg"/>
 
-7、layout.scss：布局样式中预设了6种留白尺寸，轻松实现一行、多行、弹性布局中的两边对齐。
+7、layout.scss：Layout styles preset six kinds of blank size, easy line, multi-line, on both sides of the elastic layout alignment.
 
 <img src="assets/img/layout.jpg"/>
 
-8、list.scss：结合网格、布局样式，可实现多种不同场景的列表展示，可自定义的Loading效果。
+8、list.scss：Combined grid, layout style, you can achieve a variety of different scenes list shows, Loading effect can be customized.
 
 <img src="assets/img/list.jpg"/>
 
-9、table.scss：将表格抽象化，将边框、列表颜色等独立一个样式，可与基类样式结合使用。
+9、table.scss：The abstract form, the border, a list of color and other independent style, used in conjunction with the base class style.
 
 <img src="assets/img/table.jpg"/>
 
-10、标签（label.scss）、微标（badge.scss）、按钮（button.scss）各自的预编译文件都提供了私有方法，可以根据实际场景扩展。
+10、Label (label.scss), micro-scale (badge.scss), Button (button.scss)
+each precompiled document provides private method can be extended according to the actual scenes.
 
 <img src="assets/img/label.jpg"/>
 <img src="assets/img/badge.jpg"/>
 <img src="assets/img/button.jpg"/>
 
-11、form.scss：通过CSS3伪元素重新美化了单选框（radio.scss）、多选框（checkbox.scss）、开关项（switch.scss）。
-并结合网格、按钮等样式，可布置出多种表单项。
+11、form.scss：CSS3 pseudo-element by re-landscaping the single box (radio.scss), checkbox (checkbox.scss), switch item (switch.scss).
+Combined with the grid, buttons and other styles can be arranged in a variety of form items.
 
 <img src="assets/img/form.jpg"/>
 
-12、在mixin.scss中设置了全局mixin，在variable.scss配置了全局变量，高可用性。
+12、Setting global mixin in mixin.scss, when variable.scss configured global variables, high availability.
 
-## 浏览器兼容
+## Browser Compatibility
 Android 2.3+
 
 IOS 4.0+
 
-
-## 联系我
-对PrimusUI的使用有任何问题,或者发现bug,欢迎给我反馈：
-[提交反馈](https://github.com/pwstrick/PrimusUI/issues/new)
+## Contact Me
+The use of PrimusUI have any questions, or find bug, please leave me feedback:
+[Submit feedback](https://github.com/pwstrick/PrimusUI/issues/new)
