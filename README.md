@@ -59,14 +59,14 @@ PrimusUI
 
 <img src="assets/img/default.jpg"/>
 
-2、normalize.scss：Reset in the popular style "<a href="https://necolas.github.io/normalize.css/" target="_blank">normalize.css</a>"
+2、**normalize.scss**：Reset in the popular style "<a href="https://necolas.github.io/normalize.css/" target="_blank">normalize.css</a>"
 based on the style to make adjustments more suitable mobile terminal.
 
-3、typeface.scss：He cited a variety of scenarios font color and size, character truncation, conventional mobile terminal arrow mark.
+3、**typeface.scss**：He cited a variety of scenarios font color and size, character truncation, conventional mobile terminal arrow mark.
 
 <img src="assets/img/typeface.jpg"/>
 
-4、icon.scss：<a href="http://www.iconfont.cn/" target="_blank">Iconfont</a> in third-party libraries,
+4、**icon.scss**：<a href="http://www.iconfont.cn/" target="_blank">Iconfont</a> in third-party libraries,
 on-demand download existing icons can also upload svg files on this site, automatically made specific icon.
 
 <img src="assets/img/icon.jpg"/>
