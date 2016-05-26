@@ -3,9 +3,13 @@ Great use of small stature, responsive page, focused on the mobile side, easy to
 
 Primus name from "Transformers".
 
-Now many online open source UI library, coverage is very wide, can meet a lot of scenes. Because large and some small places may sometimes modify will be more strenuous.
+Now many online open source UI library, coverage is very wide, can meet a lot of scenes.
 
-If the actual development may have its own control UI library will save a lot of development time, and can freely modify a different code depending on the scene.
+Because large and some small places may sometimes modify will be more strenuous.
+
+If the actual development may have its own control UI library will save a lot of development time,
+
+and can freely modify a different code depending on the scene.
 
 To this end, I draw a lot of online open source library, organize modify this simple set of code, we hope to develop will help.
 
@@ -71,42 +75,42 @@ on-demand download existing icons can also upload svg files on this site, automa
 
 <img src="assets/img/icon.jpg"/>
 
-5、grid.scss：Grid achieve diversification,
+5、**grid.scss**：Grid achieve diversification,
 Including advanced grid resilient settings (12 preset widths), set as a percentage (24 kinds of preset width), the left shift, move left, right movement (also 24 kinds).
 End PC with a fixed width of different, different mobile end screen, so you can not set the width of each element will die. Elastic width or percentage after setting automatically calculated values.
 Compared to traditional float layout, flexible layout easier to control, especially in alignment of the setting.
 
 <img src="assets/img/grid.jpg"/>
 
-6、border.scss：Effective solution 1px border, in a variety of mobile terminal screen display problems.
+6、**border.scss**：Effective solution 1px border, in a variety of mobile terminal screen display problems.
 
 <img src="assets/img/border.jpg"/>
 
-7、layout.scss：Layout styles preset six kinds of blank size, easy line, multi-line, on both sides of the elastic layout alignment.
+7、**layout.scss**：Layout styles preset six kinds of blank size, easy line, multi-line, on both sides of the elastic layout alignment.
 
 <img src="assets/img/layout.jpg"/>
 
-8、list.scss：Combined grid, layout style, you can achieve a variety of different scenes list shows, Loading effect can be customized.
+8、**list.scss**：Combined grid, layout style, you can achieve a variety of different scenes list shows, Loading effect can be customized.
 
 <img src="assets/img/list.jpg"/>
 
-9、table.scss：The abstract form, the border, a list of color and other independent style, used in conjunction with the base class style.
+9、**table.scss**：The abstract form, the border, a list of color and other independent style, used in conjunction with the base class style.
 
 <img src="assets/img/table.jpg"/>
 
-10、Label (label.scss), micro-scale (badge.scss), Button (button.scss)
+10、Label (**label.scss**), micro-scale (**badge.scss**), Button (**button.scss**)
 each precompiled document provides private method can be extended according to the actual scenes.
 
 <img src="assets/img/label.jpg"/>
 <img src="assets/img/badge.jpg"/>
 <img src="assets/img/button.jpg"/>
 
-11、form.scss：CSS3 pseudo-element by re-landscaping the single box (radio.scss), checkbox (checkbox.scss), switch item (switch.scss).
+11、**form.scss**：CSS3 pseudo-element by re-landscaping the single box (radio.scss), checkbox (checkbox.scss), switch item (switch.scss).
 Combined with the grid, buttons and other styles can be arranged in a variety of form items.
 
 <img src="assets/img/form.jpg"/>
 
-12、Setting global mixin in mixin.scss, when variable.scss configured global variables, high availability.
+12、Setting global mixin in **mixin.scss**, when **variable.scss** configured global variables, high availability.
 
 ## Browser Compatibility
 Android 2.3+
