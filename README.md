@@ -86,7 +86,7 @@ PrimusUI
 
 <img src="assets/img/layout.jpg"/>
 
-8、list.scss：结合网格、布局样式，可实现多种不同场景的列表展示，可自定义的Loading（）效果。
+8、list.scss：结合网格、布局样式，可实现多种不同场景的列表展示，可自定义的Loading效果。
 
 <img src="assets/img/list.jpg"/>
 
@@ -105,7 +105,7 @@ PrimusUI
 
 <img src="assets/img/form.jpg"/>
 
-12、在mixin.scss中设置了全局在mixin，在variable.scss配置了全局变量，高可用性。
+12、在mixin.scss中设置了全局mixin，在variable.scss配置了全局变量，高可用性。
 
 ## 浏览器兼容
 Android 2.3+
@@ -114,10 +114,5 @@ IOS 4.0+
 
 
 ## 联系我
-对zDialog的使用有任何问题,或者发现bug,欢迎给我反馈：
+对PrimusUI的使用有任何问题,或者发现bug,欢迎给我反馈：
 [提交反馈](https://github.com/pwstrick/PrimusUI/issues/new)
-
-## License (MIT)
-Copyright (c) 2016 pwstrick
-
-[MIT](https://github.com/pwstrick/PrimusUI/blob/master/LICENSE)
