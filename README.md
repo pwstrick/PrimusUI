@@ -116,5 +116,8 @@ Android 2.3+
 IOS 4.0+
 
 ## Contact Me
+
+QQ群：485809424
+
 The use of PrimusUI have any questions, or find bug, please leave me feedback:
 [Submit feedback](https://github.com/pwstrick/PrimusUI/issues/new)
