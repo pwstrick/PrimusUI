@@ -119,5 +119,5 @@ IOS 4.0+
 
 QQ群：485809424
 
-The use of PrimusUI have any questions, or find bug, please leave me feedback:
+The use of PrimusUI have any questions, or find bug, please leave me feedback :
 [Submit feedback](https://github.com/pwstrick/PrimusUI/issues/new)
